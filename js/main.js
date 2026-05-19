@@ -93,9 +93,10 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
       try {
-        const data = new URLSearchParams(new FormData(contactForm));
-        const res = await fetch('mail.php', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data });
-        if (!res.ok) throw new Error('Server error');
+        const data = new FormData(contactForm);
+        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
+        const json = await res.json();
+        if (!res.ok || !json.success) throw new Error(json.message || 'Server error');
         const msg = document.getElementById('formSuccess');
         if (msg) { contactForm.style.display = 'none'; msg.style.display = 'block'; }
       } catch {
