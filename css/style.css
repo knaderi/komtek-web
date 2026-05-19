@@ -166,6 +166,8 @@ p:last-child{margin-bottom:0}
 /* ============================================================
    WHY US
    ============================================================ */
+.why-visual-wrap{border-radius:var(--radius);overflow:hidden;margin-bottom:3rem;box-shadow:var(--shadow-hover)}
+.why-visual-wrap img{width:100%;height:auto;display:block}
 .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
 .why-item{display:flex;gap:1rem;align-items:flex-start}
 .why-icon{width:46px;height:46px;background:var(--primary-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
