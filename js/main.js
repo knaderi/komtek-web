@@ -86,6 +86,12 @@
   /* ---- Contact form (Netlify) ---- */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    // Show success message if redirected back after submission
+    if (window.location.search.includes('sent=1')) {
+      const msg = document.getElementById('formSuccess');
+      if (msg) { contactForm.style.display = 'none'; msg.style.display = 'block'; }
+    }
+
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = contactForm.querySelector('[type="submit"]');
@@ -100,9 +106,9 @@
         const msg = document.getElementById('formSuccess');
         if (msg) { contactForm.style.display = 'none'; msg.style.display = 'block'; }
       } catch {
-        btn.textContent = 'Error — please try again';
-        btn.disabled = false;
-        setTimeout(() => { btn.textContent = original; }, 3000);
+        // JS failed — fall back to direct form POST
+        contactForm.removeEventListener('submit', arguments.callee);
+        contactForm.submit();
       }
     });
   }
