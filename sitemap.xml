@@ -1,39 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://www.komtek.co.uk/</loc>
-    <lastmod>2025-05-18</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://www.komtek.co.uk/voip.html</loc>
-    <lastmod>2025-05-18</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://www.komtek.co.uk/digital-marketing.html</loc>
-    <lastmod>2025-05-18</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://www.komtek.co.uk/design-development.html</loc>
-    <lastmod>2025-05-18</lastmod>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
   <url>
     <loc>https://www.komtek.co.uk/about.html</loc>
-    <lastmod>2025-05-18</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
+
   <url>
     <loc>https://www.komtek.co.uk/contact.html</loc>
-    <lastmod>2025-05-18</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.komtek.co.uk/blog/</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://www.komtek.co.uk/blog/voip-benefits-for-small-business.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
