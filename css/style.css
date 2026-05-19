@@ -310,8 +310,9 @@ p:last-child{margin-bottom:0}
 .footer-top{padding:4rem 0 2.5rem}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
 .footer-brand p{color:rgba(255,255,255,.65);margin-top:1rem;font-size:.88rem;max-width:270px;line-height:1.65}
-.footer-logo img{height:42px;width:auto}
-.footer-logo .logo-fallback{font-size:1.35rem;font-weight:800;display:none}
+.footer-logo{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:var(--radius-sm);padding:.5rem 1.125rem;box-shadow:0 2px 12px rgba(0,0,0,.25);margin-bottom:.25rem}
+.footer-logo img{height:56px;width:auto}
+.footer-logo .logo-fallback{font-size:1.35rem;font-weight:800;display:none;color:var(--primary)}
 .footer-col h4{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:1.125rem}
 .footer-col li{margin-bottom:.5rem}
 .footer-col li a{color:rgba(255,255,255,.72);font-size:.875rem;transition:var(--ease)}
@@ -326,6 +327,13 @@ p:last-child{margin-bottom:0}
 .social-btn{width:34px;height:34px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:var(--ease)}
 .social-btn:hover{background:var(--primary)}
 .social-btn svg{width:16px;height:16px}
+
+/* ============================================================
+   WHATSAPP FLOATING BUTTON
+   ============================================================ */
+.whatsapp-fab{position:fixed;bottom:1.5rem;right:1.5rem;width:58px;height:58px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);z-index:9999;transition:transform .25s ease,box-shadow .25s ease;color:#fff}
+.whatsapp-fab:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.6)}
+.whatsapp-fab svg{width:30px;height:30px}
 
 /* ============================================================
    RESPONSIVE
