@@ -86,31 +86,11 @@
   /* ---- Contact form (Netlify) ---- */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    // Show success message if redirected back after submission
+    // Show success message if redirected back after Web3Forms submission
     if (window.location.search.includes('sent=1')) {
       const msg = document.getElementById('formSuccess');
       if (msg) { contactForm.style.display = 'none'; msg.style.display = 'block'; }
     }
-
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('[type="submit"]');
-      const original = btn.textContent;
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      try {
-        const data = new FormData(contactForm);
-        const res = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: data });
-        const json = await res.json();
-        if (!res.ok || !json.success) throw new Error(json.message || 'Server error');
-        const msg = document.getElementById('formSuccess');
-        if (msg) { contactForm.style.display = 'none'; msg.style.display = 'block'; }
-      } catch {
-        // JS failed — fall back to direct form POST
-        contactForm.removeEventListener('submit', arguments.callee);
-        contactForm.submit();
-      }
-    });
   }
 
   /* ---- Smooth anchor scroll ---- */
