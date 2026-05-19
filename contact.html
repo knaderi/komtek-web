@@ -252,16 +252,9 @@
             id="contactForm"
             name="contact"
             method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-            data-netlify-subject="New enquiry from KomTek website"
-            action="/contact.html"
+            action="mail.php"
             novalidate
           >
-            <!-- Netlify required hidden fields -->
-            <input type="hidden" name="form-name" value="contact">
-            <input type="hidden" name="_to" value="info@komtek.co.uk">
-
             <!-- Honeypot spam protection -->
             <div class="honeypot" aria-hidden="true">
               <label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>

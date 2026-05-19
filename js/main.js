@@ -94,7 +94,8 @@
       btn.textContent = 'Sending…';
       try {
         const data = new URLSearchParams(new FormData(contactForm));
-        await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data });
+        const res = await fetch('mail.php', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data });
+        if (!res.ok) throw new Error('Server error');
         const msg = document.getElementById('formSuccess');
         if (msg) { contactForm.style.display = 'none'; msg.style.display = 'block'; }
       } catch {
