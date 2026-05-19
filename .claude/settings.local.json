@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.komtek.co.uk)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://www.komtek.co.uk/wp-content/uploads/2025/04/logo.png\" -OutFile \"C:\\\\Users\\\\admin\\\\komtek-web\\\\images\\\\logo.png\" -UseBasicParsing; Write-Output \"Logo downloaded: $\\(\\(Get-Item 'C:\\\\Users\\\\admin\\\\komtek-web\\\\images\\\\logo.png'\\).Length\\) bytes\")",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\admin\\\\komtek-web\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object FullName, @{Name='Size';Expression={\"{0:N0} bytes\" -f $_.Length}} | Format-Table -AutoSize)"
+    ]
+  }
+}
