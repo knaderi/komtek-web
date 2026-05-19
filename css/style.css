@@ -118,7 +118,8 @@ p:last-child{margin-bottom:0}
    ============================================================ */
 .hero{background:linear-gradient(135deg,var(--primary-dark) 0%,#1c6dd0 100%);color:#fff;padding:5.5rem 0 4.5rem;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(255,255,255,.04) 0%,transparent 60%),radial-gradient(circle at 80% 20%,rgba(255,255,255,.06) 0%,transparent 50%)}
-.hero-inner{position:relative;max-width:680px}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.hero-content{max-width:580px}
 .hero .tag{background:rgba(255,255,255,.18);color:#fff}
 .hero h1{margin-bottom:1.25rem}
 .hero-lead{font-size:1.15rem;opacity:.9;margin-bottom:2rem;max-width:540px}
@@ -126,6 +127,8 @@ p:last-child{margin-bottom:0}
 .hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(255,255,255,.15)}
 .hero-stat-val{font-size:2rem;font-weight:800;line-height:1}
 .hero-stat-lbl{font-size:.82rem;opacity:.75;margin-top:.3rem}
+.hero-image{position:relative;display:flex;align-items:flex-end;justify-content:center;align-self:flex-end;margin-bottom:-4.5rem}
+.hero-image img{border-radius:var(--radius) var(--radius) 0 0;width:100%;height:auto;filter:drop-shadow(0 -10px 30px rgba(0,0,0,.25))}
 
 /* Page hero (inner pages) */
 .page-hero{background:linear-gradient(135deg,var(--primary-dark) 0%,#1c6dd0 100%);color:#fff;padding:3.5rem 0}
@@ -211,6 +214,15 @@ p:last-child{margin-bottom:0}
 .faq-item.open .faq-a{display:block}
 
 /* ============================================================
+   CLIENTS / TRUST STRIP
+   ============================================================ */
+.clients-section{padding:4rem 0;background:var(--bg-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.clients-label{text-align:center;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:2rem}
+.clients-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.5rem 2.5rem}
+.clients-grid img{height:40px;width:auto;max-width:120px;object-fit:contain;filter:grayscale(100%);opacity:.6;transition:var(--ease)}
+.clients-grid img:hover{filter:grayscale(0%);opacity:1}
+
+/* ============================================================
    CTA BANNER
    ============================================================ */
 .cta-banner{background:linear-gradient(135deg,var(--primary-dark) 0%,#1c6dd0 100%);color:#fff;padding:4rem 0;text-align:center}
@@ -258,6 +270,8 @@ p:last-child{margin-bottom:0}
    ============================================================ */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .about-visual{background:linear-gradient(135deg,var(--primary-light),#dbeafe);border-radius:var(--radius);padding:2.5rem}
+.about-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-hover)}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .about-value-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
 .value-box{background:#fff;border-radius:var(--radius-sm);padding:1.25rem;box-shadow:var(--shadow)}
 .value-box-icon{width:38px;height:38px;background:var(--primary-light);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
@@ -308,6 +322,8 @@ p:last-child{margin-bottom:0}
   .navbar-nav,.navbar-right{display:none}
   .menu-toggle{display:flex}
   .hero{padding:3.5rem 0 3rem}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-image{display:none}
   .hero-stats{gap:1.5rem}
   .section{padding:3.5rem 0}
   .grid-2,.grid-3{grid-template-columns:1fr}
@@ -322,6 +338,7 @@ p:last-child{margin-bottom:0}
   .footer-bottom{flex-direction:column;text-align:center}
   .cta-btns,.hero-btns{flex-direction:column;align-items:center}
   .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .clients-grid img{height:32px;max-width:90px}
 }
 
 @media(max-width:480px){
