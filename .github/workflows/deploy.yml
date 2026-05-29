@@ -16,12 +16,21 @@ jobs:
         run: sudo apt-get install -y lftp
 
       - name: Deploy via SFTP
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USER: ${{ secrets.FTP_USERNAME }}
+          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
+          FTP_DIR: ${{ secrets.FTP_SERVER_DIR }}
         run: |
-          lftp -u "${{ secrets.FTP_USERNAME }}","${{ secrets.FTP_PASSWORD }}" \
-            -e "set sftp:auto-confirm yes; \
-                set net:max-retries 3; \
-                mirror --reverse --overwrite --verbose --no-perms --parallel=4 \
-                  --exclude .git/ --exclude .github/ --exclude .claude/ \
-                  . ${{ secrets.FTP_SERVER_DIR }}; \
-                quit" \
-            sftp://${{ secrets.FTP_SERVER }}
+          cat > /tmp/lftp-deploy.txt << LFTP
+          set sftp:auto-confirm yes
+          set net:max-retries 3
+          open -u "$FTP_USER","$FTP_PASS" sftp://$FTP_SERVER
+          mirror --reverse --overwrite --verbose --no-perms --parallel=4 \
+            --exclude-glob .git \
+            --exclude-glob .github \
+            --exclude-glob .claude \
+            . $FTP_DIR
+          quit
+          LFTP
+          lftp -f /tmp/lftp-deploy.txt
