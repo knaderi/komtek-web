@@ -357,7 +357,7 @@ p:last-child{margin-bottom:0}
 @media(max-width:768px){
   .topbar-inner{justify-content:center;gap:1.25rem;padding:.5rem 1rem}
   .navbar-nav{display:none}
-  .navbar-right .navbar-phone,.navbar-right .btn-primary{display:none}
+  .navbar-right .navbar-phone,.navbar-right .btn-primary,.navbar-right .btn-accent{display:none}
   .menu-toggle{display:flex}
   .hero{padding:3.5rem 0 0}
   .hero-inner{grid-template-columns:1fr}
