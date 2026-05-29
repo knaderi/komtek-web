@@ -351,7 +351,8 @@ p:last-child{margin-bottom:0}
   .menu-toggle{display:flex}
   .hero{padding:3.5rem 0 3rem}
   .hero-inner{grid-template-columns:1fr}
-  .hero-image{display:none}
+  .hero-image{display:flex;margin-bottom:-2rem;max-height:260px;overflow:hidden}
+  .hero-image img{border-radius:var(--radius);object-fit:cover;object-position:top}
   .hero-stats{gap:1.5rem}
   .section{padding:3.5rem 0}
   .grid-2,.grid-3{grid-template-columns:1fr}
