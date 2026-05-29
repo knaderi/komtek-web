@@ -302,13 +302,14 @@
             id="contactForm"
             name="contact"
             method="POST"
-            action="https://formsubmit.co/info@komtek.co.uk"
+            action="https://api.web3forms.com/submit"
             novalidate
           >
-            <input type="hidden" name="_subject" value="New enquiry from KomTek website">
-            <input type="hidden" name="_next" value="https://www.komtek.co.uk/contact.html?sent=1">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="access_key" value="4d3fa102-b1d4-409e-be88-cb32b75e4662">
+            <input type="hidden" name="subject" value="New enquiry from KomTek website">
+            <input type="hidden" name="from_name" value="KomTek Website">
+            <input type="hidden" name="redirect" value="https://www.komtek.co.uk/contact.html?sent=1">
+            <input type="checkbox" name="botcheck" style="display:none">
 
             <div class="form-row">
               <div class="form-group">
