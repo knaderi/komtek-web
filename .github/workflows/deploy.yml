@@ -12,18 +12,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            node_modules/**
-            package.json
-            package-lock.json
-            mail.php
+      - name: Deploy via SFTP
+        run: |
+          sudo apt-get install -y lftp
+          lftp -c "
+            set sftp:auto-confirm yes
+            set net:max-retries 3
+            set net:timeout 30
+            open sftp://${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}@${{ secrets.FTP_SERVER }}:22
+            mirror -R --delete \
+              --exclude=^\.git \
+              --exclude=^node_modules/ \
+              --exclude=^package\.json \
+              --exclude=^package-lock\.json \
+              --exclude=^mail\.php \
+              . ${{ secrets.FTP_SERVER_DIR }}
+          "
