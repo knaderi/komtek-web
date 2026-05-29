@@ -525,6 +525,10 @@
             <label><input type="radio" name="lp_access" value="I will provide access later"> I will provide access later</label>
             <label><input type="radio" name="lp_access" value="I am not providing website access"> I am not providing website access</label>
           </div>
+          <div class="access-box visible" id="lp_access_box">
+            <strong>Add us as an administrator:</strong>
+            Please add <strong>komtek.marketing@gmail.com</strong> as an administrator with full access to your website CMS so we can manage the landing pages for your campaign.
+          </div>
         </div>
       </div>
 
@@ -657,6 +661,14 @@
     }
     return true;
   }
+
+  // ── Landing page access toggle ───────────────────────────
+  document.querySelectorAll('input[name="lp_access"]').forEach(function(r) {
+    r.addEventListener('change', function() {
+      const box = document.getElementById('lp_access_box');
+      box.classList.toggle('visible', this.value === 'I am providing full access');
+    });
+  });
 
   function handleSubmit() {
     if (!validateStep(3)) return;
