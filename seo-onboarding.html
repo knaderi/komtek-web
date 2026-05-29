@@ -526,9 +526,13 @@
         <div class="field">
           <label>Website access</label>
           <div class="radio-group">
-            <label><input type="radio" name="web_access" value="I am providing full access" checked> I am providing full access</label>
+            <label><input type="radio" name="web_access" value="I am providing full access" checked id="access_full"> I am providing full access</label>
             <label><input type="radio" name="web_access" value="I will provide access later"> I will provide access later</label>
             <label><input type="radio" name="web_access" value="I am not providing website access"> I am not providing website access</label>
+          </div>
+          <div class="access-box visible" id="web_access_box">
+            <strong>Send your login credentials to:</strong>
+            Please email your CMS username and password to <strong>komtek.marketing@gmail.com</strong> so we can access and work on your website.
           </div>
         </div>
       </div>
@@ -710,6 +714,14 @@
     }
     return true;
   }
+
+  // ── Website access toggle ────────────────────────────────
+  document.querySelectorAll('input[name="web_access"]').forEach(function(r) {
+    r.addEventListener('change', function() {
+      const box = document.getElementById('web_access_box');
+      box.classList.toggle('visible', this.value === 'I am providing full access');
+    });
+  });
 
   // ── Google access toggle ─────────────────────────────────
   document.getElementById('ga_yes').addEventListener('change', function() {
