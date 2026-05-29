@@ -12,25 +12,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install lftp
-        run: sudo apt-get install -y lftp
-
       - name: Deploy via SFTP
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USER: ${{ secrets.FTP_USERNAME }}
-          FTP_PASS: ${{ secrets.FTP_PASSWORD }}
-          FTP_DIR: ${{ secrets.FTP_SERVER_DIR }}
-        run: |
-          cat > /tmp/lftp-deploy.txt << LFTP
-          set sftp:auto-confirm yes
-          set net:max-retries 3
-          open -u "$FTP_USER","$FTP_PASS" sftp://$FTP_SERVER
-          mirror --reverse --overwrite --verbose --no-perms --parallel=4 \
-            --exclude-glob .git \
-            --exclude-glob .github \
-            --exclude-glob .claude \
-            . $FTP_DIR
-          quit
-          LFTP
-          lftp -f /tmp/lftp-deploy.txt
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          port: 22
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_path: './*'
+          remote_path: ${{ secrets.FTP_SERVER_DIR }}
+          sftp_only: true
+          delete_remote_files: false
