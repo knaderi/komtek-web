@@ -545,11 +545,11 @@
       <h2>Details received — thank you!</h2>
       <p>We have your campaign information. You will now be taken to set up your Direct Debit subscription via GoCardless.</p>
       <p style="font-size:.85rem;color:var(--muted)">Redirecting in <span id="countdown">5</span> seconds…</p>
-      <a href="GOCARDLESS_PAYMENT_LINK_HERE" class="btn btn-primary" id="gcLink">
+      <a href="https://pay.gocardless.com/BRT01KST86GTVF5KKMF1TM2ZWC7QC" class="btn btn-primary" id="gcLink">
         Set Up Subscription Now →
       </a>
       <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:1.5rem;text-align:left" id="qrSection" style="display:none">
-        <a href="GOCARDLESS_PAYMENT_LINK_HERE" target="_blank" rel="noopener noreferrer" style="flex-shrink:0" id="qrLink">
+        <a href="https://pay.gocardless.com/BRT01KST86GTVF5KKMF1TM2ZWC7QC" target="_blank" rel="noopener noreferrer" style="flex-shrink:0" id="qrLink">
           <img src="images/ppc-gocardless-qr.png" alt="Scan to set up your KomTek PPC subscription via GoCardless" style="width:180px;height:auto;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.1)" id="qrImg">
         </a>
         <div>
@@ -707,7 +707,7 @@
     document.querySelector('.progress-bar').style.display = 'none';
     document.getElementById('successScreen').classList.add('visible');
 
-    const gcUrl = 'GOCARDLESS_PAYMENT_LINK_HERE';
+    const gcUrl = 'https://pay.gocardless.com/BRT01KST86GTVF5KKMF1TM2ZWC7QC';
     document.getElementById('gcLink').href = gcUrl;
 
     let secs = 5;
