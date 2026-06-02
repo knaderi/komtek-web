@@ -41,8 +41,9 @@
       btn.style.fontWeight = active ? '700' : '400';
       btn.style.color = active ? 'var(--primary)' : 'var(--text)';
     });
-    var lbl = document.getElementById('langLabel');
-    if (lbl) lbl.textContent = (window.__lang || 'en').toUpperCase();
+    document.querySelectorAll('.lang-label').forEach(function (lbl) {
+      lbl.textContent = (window.__lang || 'en').toUpperCase();
+    });
   }
 
   function setLang(lang) {

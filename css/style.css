@@ -119,6 +119,7 @@ p:last-child{margin-bottom:0}
 .lang-sw:focus-within .lang-drop,.lang-drop:hover{display:block}
 .lang-drop button{display:block;width:100%;text-align:left;padding:.55rem .875rem;font-size:.82rem;background:none;border:none;cursor:pointer;transition:background .15s;white-space:nowrap}
 .lang-drop button:hover{background:var(--bg-light)}
+.lang-sw-nav{display:none}
 .topbar-link svg{width:13px;height:13px;flex-shrink:0}
 
 /* Mobile nav */
@@ -367,8 +368,13 @@ p:last-child{margin-bottom:0}
 
 @media(max-width:768px){
   .topbar-inner{justify-content:center;gap:1rem;padding:.5rem 1rem}
-  .lang-sw{font-size:.72rem;padding:.2rem .45rem}
   .topbar-email{display:none}
+  .lang-sw-topbar{display:none}
+  .lang-sw-nav{display:inline-flex;border-color:rgba(0,0,0,.18);color:var(--text);font-size:.78rem}
+  .lang-sw-nav:hover{border-color:var(--primary);color:var(--primary)}
+  .lang-sw-nav svg{color:currentColor}
+  .navbar-inner{position:relative;justify-content:space-between}
+  .navbar-logo{position:absolute;left:50%;transform:translateX(-50%)}
   .navbar-nav{display:none}
   .navbar-right .navbar-phone,.navbar-right .btn-primary,.navbar-right .btn-accent{display:none}
   .menu-toggle{display:flex}

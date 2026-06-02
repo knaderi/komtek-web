@@ -118,9 +118,9 @@
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="lang-sw" tabindex="0" aria-label="Select language">
+    <div class="lang-sw lang-sw-topbar" tabindex="0" aria-label="Select language">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      <span id="langLabel">EN</span>
+      <span class="lang-label">EN</span>
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
       <div class="lang-drop" role="menu">
         <button data-lang-opt="en" onclick="i18nSet('en')" role="menuitem">English</button>
@@ -143,6 +143,17 @@
 <!-- NAVIGATION -->
 <nav class="navbar" aria-label="Main navigation">
   <div class="navbar-inner">
+    <div class="lang-sw lang-sw-nav" tabindex="0" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="lang-label">EN</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+      <div class="lang-drop" role="menu">
+        <button data-lang-opt="en" onclick="i18nSet('en')" role="menuitem">English</button>
+        <button data-lang-opt="es" onclick="i18nSet('es')" role="menuitem">Español</button>
+        <button data-lang-opt="fr" onclick="i18nSet('fr')" role="menuitem">Français</button>
+        <button data-lang-opt="de" onclick="i18nSet('de')" role="menuitem">Deutsch</button>
+      </div>
+    </div>
     <a href="index.html" class="navbar-logo" aria-label="KomTek Home">
       <img src="images/logo.png" alt="KomTek" width="120" height="46">
       <span class="logo-fallback">KomTek</span>
