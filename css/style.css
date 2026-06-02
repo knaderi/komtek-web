@@ -85,13 +85,13 @@ p:last-child{margin-bottom:0}
    ============================================================ */
 .navbar{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border);transition:box-shadow .25s}
 .navbar.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.1)}
-.navbar-inner{display:flex;align-items:center;justify-content:space-between;padding:.875rem 1.5rem;max-width:var(--max);margin:0 auto}
+.navbar-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.875rem 1.5rem;max-width:var(--max);margin:0 auto}
 .navbar-logo{display:flex;align-items:center;gap:.625rem}
 .navbar-logo img{height:46px;width:auto}
 .navbar-logo .logo-fallback{font-size:1.4rem;font-weight:800;color:var(--primary);display:none}
 .navbar-nav{display:flex;align-items:center;gap:.25rem}
 .nav-item{position:relative}
-.nav-link{display:flex;align-items:center;gap:.25rem;padding:.5rem .875rem;border-radius:var(--radius-sm);font-weight:500;font-size:.92rem;color:var(--text);transition:var(--ease)}
+.nav-link{display:flex;align-items:center;gap:.25rem;padding:.5rem .7rem;border-radius:var(--radius-sm);font-weight:500;font-size:.875rem;color:var(--text);transition:var(--ease);white-space:nowrap}
 .nav-link:hover,.nav-link.active{color:var(--primary);background:var(--primary-light)}
 .nav-caret{width:14px;height:14px;opacity:.6}
 .dropdown{position:absolute;top:calc(100% + .5rem);left:0;background:#fff;border-radius:var(--radius);box-shadow:0 12px 40px rgba(0,0,0,.12);min-width:230px;padding:.5rem;opacity:0;visibility:hidden;transform:translateY(-8px);transition:var(--ease);z-index:200}
