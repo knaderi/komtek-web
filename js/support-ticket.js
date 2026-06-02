@@ -201,11 +201,7 @@
 
     } catch (err) {
       console.error('Ticket submission error:', err);
-      let msg = 'Something went wrong. Please try again or call us on 0333 305 6676.';
-      if (err.message && err.message.includes('supabase')) {
-        msg = 'Unable to connect to our ticketing system. Please try again shortly.';
-      }
-      showError(msg);
+      showError('Error: ' + (err.message || JSON.stringify(err)));
       setLoading(false);
     }
   });
