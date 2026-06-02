@@ -39,6 +39,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/i18n.js" defer></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -94,6 +95,17 @@
 <!-- TOPBAR -->
 <div class="topbar">
   <div class="topbar-inner">
+    <div class="lang-sw" tabindex="0" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span id="langLabel">EN</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+      <div class="lang-drop" role="menu">
+        <button data-lang-opt="en" onclick="i18nSet('en')" role="menuitem">English</button>
+        <button data-lang-opt="es" onclick="i18nSet('es')" role="menuitem">Español</button>
+        <button data-lang-opt="fr" onclick="i18nSet('fr')" role="menuitem">Français</button>
+        <button data-lang-opt="de" onclick="i18nSet('de')" role="menuitem">Deutsch</button>
+      </div>
+    </div>
     <a href="tel:03333056676" class="topbar-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       0333 305 6676
@@ -113,40 +125,40 @@
       <span class="logo-fallback">KomTek</span>
     </a>
     <ul class="navbar-nav" role="list">
-      <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
       <li class="nav-item">
-        <a href="voip.html" class="nav-link">VoIP Services <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <a href="voip.html" class="nav-link"><span data-i18n="nav.voip">VoIP Services</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
         <div class="dropdown" role="menu">
-          <a href="voip.html#home-voip" role="menuitem">Home VoIP Phone Service</a>
-          <a href="voip.html#business-voip" role="menuitem">Business VoIP Phone Service</a>
+          <a href="voip.html#home-voip" role="menuitem" data-i18n="nav.voip_home">Home VoIP Phone Service</a>
+          <a href="voip.html#business-voip" role="menuitem" data-i18n="nav.voip_biz">Business VoIP Phone Service</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="digital-marketing.html" class="nav-link active">Digital Marketing <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <a href="digital-marketing.html" class="nav-link active"><span data-i18n="nav.marketing">Digital Marketing</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
         <div class="dropdown" role="menu">
-          <a href="#seo" role="menuitem">SEO</a>
-          <a href="#social-media" role="menuitem">Social Media Marketing</a>
-          <a href="#google-ads" role="menuitem">Google Ads</a>
-          <a href="#gbp" role="menuitem">Google Business Profile</a>
-          <a href="#spotify" role="menuitem">Spotify Advertising</a>
+          <a href="#seo" role="menuitem" data-i18n="nav.seo">SEO</a>
+          <a href="#social-media" role="menuitem" data-i18n="nav.social">Social Media Marketing</a>
+          <a href="#google-ads" role="menuitem" data-i18n="nav.google_ads">Google Ads</a>
+          <a href="#gbp" role="menuitem" data-i18n="nav.gbp">Google Business Profile</a>
+          <a href="#spotify" role="menuitem" data-i18n="nav.spotify">Spotify Advertising</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="design-development.html" class="nav-link">Design &amp; Dev <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <a href="design-development.html" class="nav-link"><span data-i18n="nav.design">Design &amp; Dev</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
         <div class="dropdown" role="menu">
-          <a href="design-development.html#website-design" role="menuitem">Website Design</a>
-          <a href="design-development.html#website-development" role="menuitem">Website Development</a>
-          <a href="design-development.html#ecommerce" role="menuitem">E-commerce Development</a>
-          <a href="design-development.html#cms" role="menuitem">CMS Website</a>
-          <a href="design-development.html#it-support" role="menuitem">IT Support</a>
+          <a href="design-development.html#website-design" role="menuitem" data-i18n="nav.web_design">Website Design</a>
+          <a href="design-development.html#website-development" role="menuitem" data-i18n="nav.web_dev">Website Development</a>
+          <a href="design-development.html#ecommerce" role="menuitem" data-i18n="nav.ecommerce">E-commerce Development</a>
+          <a href="design-development.html#cms" role="menuitem" data-i18n="nav.cms">CMS Website</a>
+          <a href="design-development.html#it-support" role="menuitem" data-i18n="nav.it">IT Support</a>
         </div>
       </li>
-      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-      <li class="nav-item"><a href="blog/index.html" class="nav-link">Blog</a></li>
+      <li class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+      <li class="nav-item"><a href="blog/index.html" class="nav-link" data-i18n="nav.blog">Blog</a></li>
     </ul>
     <div class="navbar-right">
-      <a href="signup.html" class="btn btn-accent">Sign Up</a>
-      <a href="contact.html" class="btn btn-primary">Contact Us</a>
+      <a href="signup.html" class="btn btn-accent" data-i18n="nav.signup">Sign Up</a>
+      <a href="contact.html" class="btn btn-primary" data-i18n="nav.contact">Contact Us</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -188,9 +200,9 @@
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="index.html">Home</a><span class="breadcrumb-sep">/</span><span>Digital Marketing</span>
     </nav>
-    <span class="tag">Grow Your Business Online</span>
-    <h1>Digital Marketing Services That Drive Real Results</h1>
-    <p>From first-page Google rankings to AI-powered social media campaigns — KomTek's digital marketing team helps UK businesses attract more customers and grow revenue online.</p>
+    <span class="tag" data-i18n="marketing_page.tag">Grow Your Business Online</span>
+    <h1 data-i18n="marketing_page.h1">Digital Marketing Services That Drive Real Results</h1>
+    <p data-i18n="marketing_page.lead">From first-page Google rankings to AI-powered social media campaigns — KomTek's digital marketing team helps UK businesses attract more customers and grow revenue online.</p>
   </div>
 </section>
 
@@ -202,8 +214,8 @@
         <div class="svc-big-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
-        <h2>Search Engine Optimisation (SEO)</h2>
-        <p>SEO is the most cost-effective way to win customers online. KomTek helps your business rank on the first page of Google and Bing for the searches your customers are already making.</p>
+        <h2 data-i18n="marketing_page.seo_h2">Search Engine Optimisation (SEO)</h2>
+        <p data-i18n="marketing_page.seo_p">SEO is the most cost-effective way to win customers online. KomTek helps your business rank on the first page of Google and Bing for the searches your customers are already making.</p>
         <ul class="feat-list" aria-label="SEO service features">
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Full site audit &amp; technical health check</span></li>
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Keyword research &amp; competitor analysis</span></li>
@@ -241,8 +253,8 @@
         <div class="svc-big-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16,6 12,2 8,6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
         </div>
-        <h2>Social Media Marketing</h2>
-        <p>AI-enhanced content creation, trend-reactive campaigns, and laser-focused audience targeting across Instagram, Facebook, TikTok, and LinkedIn. We build engaged communities that convert into customers.</p>
+        <h2 data-i18n="marketing_page.social_h2">Social Media Marketing</h2>
+        <p data-i18n="marketing_page.social_p">AI-enhanced content creation, trend-reactive campaigns, and laser-focused audience targeting across Instagram, Facebook, TikTok, and LinkedIn. We build engaged communities that convert into customers.</p>
         <ul class="feat-list" aria-label="Social media marketing features">
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>AI-powered content creation — visuals, captions, and videos</span></li>
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Platform management: Instagram, Facebook, TikTok, LinkedIn</span></li>
@@ -279,8 +291,8 @@
         <div class="svc-big-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/></svg>
         </div>
-        <h2>Google Ads (PPC) Management</h2>
-        <p>Precision-targeted, AI-optimised Google Ads campaigns that put your business in front of customers at the exact moment they're searching for what you offer. Maximum ROI, transparent reporting.</p>
+        <h2 data-i18n="marketing_page.ads_h2">Google Ads (PPC) Management</h2>
+        <p data-i18n="marketing_page.ads_p">Precision-targeted, AI-optimised Google Ads campaigns that put your business in front of customers at the exact moment they're searching for what you offer. Maximum ROI, transparent reporting.</p>
         <ul class="feat-list" aria-label="Google Ads features">
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Search Ads — appear when customers search for your services</span></li>
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Display Ads — brand awareness across the Google network</span></li>
@@ -318,8 +330,8 @@
         <div class="svc-big-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
-        <h2>Google Business Profile Optimisation</h2>
-        <p>85% of customers search online before visiting a local business. A well-optimised Google Business Profile puts you at the top of local search results and Google Maps — driving calls, bookings, and foot traffic.</p>
+        <h2 data-i18n="marketing_page.gbp_h2">Google Business Profile Optimisation</h2>
+        <p data-i18n="marketing_page.gbp_p">85% of customers search online before visiting a local business. A well-optimised Google Business Profile puts you at the top of local search results and Google Maps — driving calls, bookings, and foot traffic.</p>
         <ul class="feat-list" aria-label="Google Business Profile features">
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Full profile setup &amp; verification assistance</span></li>
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Category, description &amp; attribute optimisation</span></li>
@@ -357,8 +369,8 @@
         <div class="svc-big-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
         </div>
-        <h2>Spotify Advertising</h2>
-        <p>Reach millions of active listeners on Spotify with targeted audio, video, and display ads. Spotify's unique demographic and listening-habit targeting means your message lands at exactly the right moment.</p>
+        <h2 data-i18n="marketing_page.spotify_h2">Spotify Advertising</h2>
+        <p data-i18n="marketing_page.spotify_p">Reach millions of active listeners on Spotify with targeted audio, video, and display ads. Spotify's unique demographic and listening-habit targeting means your message lands at exactly the right moment.</p>
         <ul class="feat-list" aria-label="Spotify advertising features">
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Audio ads — scripted, voiced, and produced for you</span></li>
           <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Video ads &amp; sponsored sessions</span></li>
@@ -393,7 +405,7 @@
   <div class="container">
     <div class="section-header">
       <span class="tag">FAQ</span>
-      <h2>Digital Marketing Questions Answered</h2>
+      <h2 data-i18n="marketing_page.faq_h2">Digital Marketing Questions Answered</h2>
     </div>
     <div class="faq-wrap">
       <div class="faq-item">
@@ -423,10 +435,10 @@
 <!-- CTA -->
 <section class="cta-banner" aria-label="Digital marketing call to action">
   <div class="container">
-    <h2>Ready to Grow Your Business Online?</h2>
+    <h2 data-i18n="marketing_page.cta_h2">Ready to Grow Your Business Online?</h2>
     <p>Get a free digital marketing audit — we'll identify exactly what's holding you back.</p>
     <div class="cta-btns">
-      <a href="contact.html" class="btn btn-white">Get a Free Audit</a>
+      <a href="contact.html" class="btn btn-white" data-i18n="marketing_page.cta_btn">Get a Free Audit</a>
       <a href="tel:03333056676" class="btn btn-white-outline">Call 033 33 05 6676</a>
     </div>
   </div>
@@ -439,32 +451,32 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="footer-logo"><img src="images/logo.png" alt="KomTek" width="110" height="42"><span class="logo-fallback">KomTek</span></a>
-          <p>UK-based global telecom and digital services provider, delivering VoIP, digital marketing, and web solutions since 2007.</p>
+          <p data-i18n="footer.tagline">UK-based global telecom and digital services provider, delivering VoIP, digital marketing, and web solutions since 2007.</p>
         </div>
         <div class="footer-col">
-          <h4>Digital Marketing</h4>
+          <h4 data-i18n="footer.marketing">Digital Marketing</h4>
           <ul>
-            <li><a href="#seo">SEO</a></li>
-            <li><a href="#social-media">Social Media</a></li>
-            <li><a href="#google-ads">Google Ads</a></li>
-            <li><a href="#gbp">Google Business Profile</a></li>
-            <li><a href="#spotify">Spotify Ads</a></li>
+            <li><a href="#seo" data-i18n="nav.seo">SEO</a></li>
+            <li><a href="#social-media" data-i18n="nav.social">Social Media Marketing</a></li>
+            <li><a href="#google-ads" data-i18n="nav.google_ads">Google Ads</a></li>
+            <li><a href="#gbp" data-i18n="nav.gbp">Google Business Profile</a></li>
+            <li><a href="#spotify" data-i18n="nav.spotify">Spotify Advertising</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Other Services</h4>
+          <h4 data-i18n="footer.services">Services</h4>
           <ul>
-            <li><a href="voip.html">VoIP Phone Systems</a></li>
-            <li><a href="design-development.html">Website Design</a></li>
-            <li><a href="design-development.html#it-support">IT Support</a></li>
-            <li><a href="about.html">About KomTek</a></li>
-            <li><a href="blog/index.html">Blog</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="voip.html" data-i18n="footer.voip">VoIP Phone Systems</a></li>
+            <li><a href="design-development.html" data-i18n="footer.design">Website Design</a></li>
+            <li><a href="design-development.html#it-support" data-i18n="footer.it">IT Support</a></li>
+            <li><a href="about.html" data-i18n="footer.about">About KomTek</a></li>
+            <li><a href="blog/index.html" data-i18n="footer.blog">Blog</a></li>
+            <li><a href="contact.html" data-i18n="footer.contact_label">Contact Us</a></li>
+            <li><a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer.contact_label">Contact</h4>
           <ul class="footer-contact">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:03333056676">033 33 05 6676</a></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@komtek.co.uk">info@komtek.co.uk</a></li>

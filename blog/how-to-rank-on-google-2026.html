@@ -31,6 +31,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/i18n.js" defer></script>
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH5WBBZZQ0"></script>
   <script>
@@ -90,6 +91,17 @@
 <!-- ======= TOPBAR ======= -->
 <div class="topbar">
   <div class="topbar-inner">
+    <div class="lang-sw" tabindex="0" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span id="langLabel">EN</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+      <div class="lang-drop" role="menu">
+        <button data-lang-opt="en" onclick="i18nSet('en')" role="menuitem">English</button>
+        <button data-lang-opt="es" onclick="i18nSet('es')" role="menuitem">Español</button>
+        <button data-lang-opt="fr" onclick="i18nSet('fr')" role="menuitem">Français</button>
+        <button data-lang-opt="de" onclick="i18nSet('de')" role="menuitem">Deutsch</button>
+      </div>
+    </div>
     <a href="tel:03333056676" class="topbar-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       0333 305 6676
@@ -109,9 +121,9 @@
       <span class="logo-fallback">KomTek</span>
     </a>
     <ul class="navbar-nav" role="list">
-      <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
       <li class="nav-item">
-        <a href="../voip.html" class="nav-link">VoIP Services <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <a href="../voip.html" class="nav-link"><span data-i18n="nav.voip">VoIP Services</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
         <div class="dropdown" role="menu">
           <a href="../voip.html#home-voip" role="menuitem">Home VoIP Phone Service</a>
           <a href="../voip.html#business-voip" role="menuitem">Business VoIP Phone Service</a>
@@ -186,15 +198,15 @@
       <span style="margin:0 .5rem">›</span>
       <a href="index.html" style="color:#fff;text-decoration:none">Blog</a>
       <span style="margin:0 .5rem">›</span>
-      <span>SEO in 2026</span>
+      <span data-i18n="blog_seo.breadcrumb">SEO in 2026</span>
     </nav>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem">
-      <span style="font-size:.8rem;font-weight:600;background:rgba(255,255,255,.15);color:#fff;padding:.25rem .75rem;border-radius:50px">SEO</span>
-      <span style="font-size:.8rem;opacity:.75">29 May 2026</span>
-      <span style="font-size:.8rem;opacity:.75">· 7 min read</span>
+      <span style="font-size:.8rem;font-weight:600;background:rgba(255,255,255,.15);color:#fff;padding:.25rem .75rem;border-radius:50px" data-i18n="blog_seo.cat">SEO</span>
+      <span style="font-size:.8rem;opacity:.75" data-i18n="blog_seo.date">29 May 2026</span>
+      <span style="font-size:.8rem;opacity:.75">· <span data-i18n="blog_seo.read_time">7 min read</span></span>
     </div>
-    <h1 style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.2;max-width:760px;margin-bottom:1.25rem">How to Rank on Google in 2026: What UK Businesses Need to Know</h1>
-    <p style="font-size:1.1rem;opacity:.9;max-width:680px;line-height:1.65">Google's algorithm keeps evolving — but the fundamentals that drive rankings haven't changed as much as you'd think. Here's what actually moves the needle for UK businesses right now.</p>
+    <h1 style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.2;max-width:760px;margin-bottom:1.25rem" data-i18n="blog_seo.h1">How to Rank on Google in 2026: What UK Businesses Need to Know</h1>
+    <p style="font-size:1.1rem;opacity:.9;max-width:680px;line-height:1.65" data-i18n="blog_seo.intro">Google's algorithm keeps evolving — but the fundamentals that drive rankings haven't changed as much as you'd think. Here's what actually moves the needle for UK businesses right now.</p>
   </div>
 </section>
 
@@ -275,7 +287,7 @@
 
       <hr style="margin:3rem 0;border:none;border-top:1px solid #e2e8f0">
 
-      <h2 style="font-size:1.5rem;font-weight:700;color:var(--gray-900);margin:0 0 1rem">Frequently asked questions</h2>
+      <h2 style="font-size:1.5rem;font-weight:700;color:var(--gray-900);margin:0 0 1rem" data-i18n="blog_seo.faq_h">Frequently asked questions</h2>
 
       <div style="border:1px solid #e2e8f0;border-radius:var(--radius);overflow:hidden;margin-bottom:1rem">
         <details style="padding:1.25rem">
@@ -300,18 +312,18 @@
 
       <!-- CTA -->
       <div style="background:#f0fdf4;border-radius:var(--radius);padding:2.5rem;text-align:center;border:1px solid #bbf7d0">
-        <h3 style="font-size:1.25rem;font-weight:700;color:var(--gray-900);margin-bottom:.5rem">Want your business on page 1 of Google?</h3>
-        <p style="color:var(--gray-600);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto">KomTek's SEO team handles everything — technical SEO, content, and link building — so you can focus on running your business.</p>
+        <h3 style="font-size:1.25rem;font-weight:700;color:var(--gray-900);margin-bottom:.5rem" data-i18n="blog_seo.cta_h">Want your business on page 1 of Google?</h3>
+        <p style="color:var(--gray-600);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto" data-i18n="blog_seo.cta_p">KomTek's SEO team handles everything — technical SEO, content, and link building — so you can focus on running your business.</p>
         <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap">
-          <a href="../contact.html" class="btn btn-primary">Get a free SEO audit</a>
-          <a href="../digital-marketing.html#seo" class="btn btn-outline">Our SEO service</a>
+          <a href="../contact.html" class="btn btn-primary" data-i18n="blog_seo.cta_btn1">Get a free SEO audit</a>
+          <a href="../digital-marketing.html#seo" class="btn btn-outline" data-i18n="blog_seo.cta_btn2">Our SEO service</a>
         </div>
       </div>
 
       <div style="margin-top:2.5rem">
         <a href="index.html" style="font-size:.9rem;color:#1558b0;text-decoration:none;display:inline-flex;align-items:center;gap:.375rem">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12,19 5,12 12,5"/></svg>
-          Back to blog
+          <span data-i18n="blog_seo.back">Back to blog</span>
         </a>
       </div>
 
@@ -329,28 +341,28 @@
             <img src="../images/logo.png" alt="KomTek" width="110" height="42">
             <span class="logo-fallback">KomTek</span>
           </a>
-          <p>UK-based global telecom and digital services provider, delivering VoIP, digital marketing, and web solutions since 2007.</p>
+          <p data-i18n="footer.tagline">UK-based global telecom and digital services provider, delivering VoIP, digital marketing, and web solutions since 2007.</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h4 data-i18n="footer.services">Services</h4>
           <ul>
-            <li><a href="../voip.html">VoIP Phone Systems</a></li>
-            <li><a href="../digital-marketing.html">Digital Marketing</a></li>
-            <li><a href="../design-development.html">Website Design</a></li>
-            <li><a href="../design-development.html#it-support">IT Support</a></li>
+            <li><a href="../voip.html" data-i18n="footer.voip">VoIP Phone Systems</a></li>
+            <li><a href="../digital-marketing.html" data-i18n="footer.marketing">Digital Marketing</a></li>
+            <li><a href="../design-development.html" data-i18n="footer.design">Website Design</a></li>
+            <li><a href="../design-development.html#it-support" data-i18n="footer.it">IT Support</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4 data-i18n="footer.company">Company</h4>
           <ul>
-            <li><a href="../about.html">About KomTek</a></li>
-            <li><a href="index.html">Blog</a></li>
-            <li><a href="../contact.html">Contact Us</a></li>
-            <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="../about.html" data-i18n="footer.about">About KomTek</a></li>
+            <li><a href="index.html" data-i18n="footer.blog">Blog</a></li>
+            <li><a href="../contact.html" data-i18n="footer.contact_label">Contact Us</a></li>
+            <li><a href="../privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer.contact_label">Contact</h4>
           <ul class="footer-contact">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:03333056676">033 33 05 6676</a></li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@komtek.co.uk">info@komtek.co.uk</a></li>

@@ -112,6 +112,13 @@ p:last-child{margin-bottom:0}
 .topbar-inner{display:flex;align-items:center;justify-content:flex-end;gap:1.75rem;padding:.45rem 1.5rem;max-width:var(--max);margin:0 auto}
 .topbar-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.8);transition:color .2s;white-space:nowrap}
 .topbar-link:hover{color:#fff}
+.lang-sw{position:relative;display:inline-flex;align-items:center;gap:.3rem;padding:.25rem .6rem;border-radius:var(--radius-sm);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);font-size:.78rem;font-weight:600;cursor:pointer;user-select:none;transition:border-color .2s}
+.lang-sw:hover{border-color:rgba(255,255,255,.6)}
+.lang-sw svg{width:12px;height:12px;flex-shrink:0}
+.lang-drop{display:none;position:absolute;top:calc(100% + 6px);left:0;background:#fff;border-radius:var(--radius-sm);box-shadow:0 8px 24px rgba(0,0,0,.14);min-width:110px;overflow:hidden;z-index:400}
+.lang-sw:focus-within .lang-drop,.lang-drop:hover{display:block}
+.lang-drop button{display:block;width:100%;text-align:left;padding:.55rem .875rem;font-size:.82rem;background:none;border:none;cursor:pointer;transition:background .15s;white-space:nowrap}
+.lang-drop button:hover{background:var(--bg-light)}
 .topbar-link svg{width:13px;height:13px;flex-shrink:0}
 
 /* Mobile nav */
@@ -360,6 +367,7 @@ p:last-child{margin-bottom:0}
 
 @media(max-width:768px){
   .topbar-inner{justify-content:center;gap:1.25rem;padding:.5rem 1rem}
+  .lang-sw{font-size:.72rem;padding:.2rem .45rem}
   .navbar-nav{display:none}
   .navbar-right .navbar-phone,.navbar-right .btn-primary,.navbar-right .btn-accent{display:none}
   .menu-toggle{display:flex}

@@ -34,6 +34,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/i18n.js" defer></script>
   <!-- Structured Data — Article -->
   <script type="application/ld+json">
   {
@@ -114,6 +115,17 @@
 <!-- ======= TOPBAR ======= -->
 <div class="topbar">
   <div class="topbar-inner">
+    <div class="lang-sw" tabindex="0" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span id="langLabel">EN</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+      <div class="lang-drop" role="menu">
+        <button data-lang-opt="en" onclick="i18nSet('en')" role="menuitem">English</button>
+        <button data-lang-opt="es" onclick="i18nSet('es')" role="menuitem">Español</button>
+        <button data-lang-opt="fr" onclick="i18nSet('fr')" role="menuitem">Français</button>
+        <button data-lang-opt="de" onclick="i18nSet('de')" role="menuitem">Deutsch</button>
+      </div>
+    </div>
     <a href="tel:03333056676" class="topbar-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       0333 305 6676
@@ -133,40 +145,40 @@
       <span class="logo-fallback">KomTek</span>
     </a>
     <ul class="navbar-nav" role="list">
-      <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="../index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
       <li class="nav-item">
-        <a href="../voip.html" class="nav-link">VoIP Services <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <a href="../voip.html" class="nav-link"><span data-i18n="nav.voip">VoIP Services</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
         <div class="dropdown" role="menu">
-          <a href="../voip.html#home-voip" role="menuitem">Home VoIP Phone Service</a>
-          <a href="../voip.html#business-voip" role="menuitem">Business VoIP Phone Service</a>
+          <a href="../voip.html#home-voip" role="menuitem" data-i18n="nav.voip_home">Home VoIP Phone Service</a>
+          <a href="../voip.html#business-voip" role="menuitem" data-i18n="nav.voip_biz">Business VoIP Phone Service</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="../digital-marketing.html" class="nav-link">Digital Marketing <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <a href="../digital-marketing.html" class="nav-link"><span data-i18n="nav.marketing">Digital Marketing</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
         <div class="dropdown" role="menu">
-          <a href="../digital-marketing.html#seo" role="menuitem">SEO</a>
-          <a href="../digital-marketing.html#social-media" role="menuitem">Social Media Marketing</a>
-          <a href="../digital-marketing.html#google-ads" role="menuitem">Google Ads</a>
-          <a href="../digital-marketing.html#gbp" role="menuitem">Google Business Profile</a>
-          <a href="../digital-marketing.html#spotify" role="menuitem">Spotify Advertising</a>
+          <a href="../digital-marketing.html#seo" role="menuitem" data-i18n="nav.seo">SEO</a>
+          <a href="../digital-marketing.html#social-media" role="menuitem" data-i18n="nav.social">Social Media Marketing</a>
+          <a href="../digital-marketing.html#google-ads" role="menuitem" data-i18n="nav.google_ads">Google Ads</a>
+          <a href="../digital-marketing.html#gbp" role="menuitem" data-i18n="nav.gbp">Google Business Profile</a>
+          <a href="../digital-marketing.html#spotify" role="menuitem" data-i18n="nav.spotify">Spotify Advertising</a>
         </div>
       </li>
       <li class="nav-item">
-        <a href="../design-development.html" class="nav-link">Design &amp; Dev <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <a href="../design-development.html" class="nav-link"><span data-i18n="nav.design">Design &amp; Dev</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
         <div class="dropdown" role="menu">
-          <a href="../design-development.html#website-design" role="menuitem">Website Design</a>
-          <a href="../design-development.html#website-development" role="menuitem">Website Development</a>
-          <a href="../design-development.html#ecommerce" role="menuitem">E-commerce Development</a>
-          <a href="../design-development.html#cms" role="menuitem">CMS Website</a>
-          <a href="../design-development.html#it-support" role="menuitem">IT Support</a>
+          <a href="../design-development.html#website-design" role="menuitem" data-i18n="nav.web_design">Website Design</a>
+          <a href="../design-development.html#website-development" role="menuitem" data-i18n="nav.web_dev">Website Development</a>
+          <a href="../design-development.html#ecommerce" role="menuitem" data-i18n="nav.ecommerce">E-commerce Development</a>
+          <a href="../design-development.html#cms" role="menuitem" data-i18n="nav.cms">CMS Website</a>
+          <a href="../design-development.html#it-support" role="menuitem" data-i18n="nav.it">IT Support</a>
         </div>
       </li>
-      <li class="nav-item"><a href="../about.html" class="nav-link">About</a></li>
-      <li class="nav-item"><a href="index.html" class="nav-link active">Blog</a></li>
+      <li class="nav-item"><a href="../about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+      <li class="nav-item"><a href="index.html" class="nav-link active" data-i18n="nav.blog">Blog</a></li>
     </ul>
     <div class="navbar-right">
-      <a href="../signup.html" class="btn btn-accent">Sign Up</a>
-      <a href="../contact.html" class="btn btn-primary">Contact Us</a>
+      <a href="../signup.html" class="btn btn-accent" data-i18n="nav.signup">Sign Up</a>
+      <a href="../contact.html" class="btn btn-primary" data-i18n="nav.contact">Contact Us</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -211,15 +223,15 @@
       <span style="margin:0 .5rem">›</span>
       <a href="index.html" style="color:#fff;text-decoration:none">Blog</a>
       <span style="margin:0 .5rem">›</span>
-      <span>VoIP for Small Business</span>
+      <span data-i18n="blog_voip.breadcrumb">VoIP for Small Business</span>
     </nav>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem">
-      <span style="font-size:.8rem;font-weight:600;background:rgba(255,255,255,.15);color:#fff;padding:.25rem .75rem;border-radius:50px">VoIP</span>
-      <span style="font-size:.8rem;opacity:.75">19 May 2026</span>
-      <span style="font-size:.8rem;opacity:.75">· 6 min read</span>
+      <span style="font-size:.8rem;font-weight:600;background:rgba(255,255,255,.15);color:#fff;padding:.25rem .75rem;border-radius:50px" data-i18n="blog_voip.cat">VoIP</span>
+      <span style="font-size:.8rem;opacity:.75" data-i18n="blog_voip.date">19 May 2026</span>
+      <span style="font-size:.8rem;opacity:.75">· <span data-i18n="blog_voip.read_time">6 min read</span></span>
     </div>
-    <h1 style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.2;max-width:760px;margin-bottom:1.25rem">7 Ways VoIP Phone Systems Save Small Businesses Money</h1>
-    <p style="font-size:1.1rem;opacity:.9;max-width:680px;line-height:1.65">Traditional landlines are costing UK small businesses far more than they realise. Here's how switching to cloud-hosted VoIP can cut your phone bill by up to 60% while unlocking features you never had before.</p>
+    <h1 style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;line-height:1.2;max-width:760px;margin-bottom:1.25rem" data-i18n="blog_voip.h1">7 Ways VoIP Phone Systems Save Small Businesses Money</h1>
+    <p style="font-size:1.1rem;opacity:.9;max-width:680px;line-height:1.65" data-i18n="blog_voip.intro">Traditional landlines are costing UK small businesses far more than they realise. Here's how switching to cloud-hosted VoIP can cut your phone bill by up to 60% while unlocking features you never had before.</p>
   </div>
 </section>
 
@@ -262,7 +274,7 @@
 
       <hr style="margin:3rem 0;border:none;border-top:1px solid #e2e8f0">
 
-      <h2 style="font-size:1.5rem;font-weight:700;color:var(--gray-900);margin:0 0 1rem">Frequently asked questions</h2>
+      <h2 style="font-size:1.5rem;font-weight:700;color:var(--gray-900);margin:0 0 1rem" data-i18n="blog_voip.faq_h">Frequently asked questions</h2>
 
       <div style="border:1px solid #e2e8f0;border-radius:var(--radius);overflow:hidden;margin-bottom:1rem">
         <details style="padding:1.25rem">
@@ -287,11 +299,11 @@
 
       <!-- CTA -->
       <div style="background:#eff6ff;border-radius:var(--radius);padding:2.5rem;text-align:center;border:1px solid #bfdbfe">
-        <h3 style="font-size:1.25rem;font-weight:700;color:var(--gray-900);margin-bottom:.5rem">Ready to switch to VoIP?</h3>
-        <p style="color:var(--gray-600);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto">Get a free consultation from the KomTek team. We'll assess your current phone costs and show you exactly how much you could save.</p>
+        <h3 style="font-size:1.25rem;font-weight:700;color:var(--gray-900);margin-bottom:.5rem" data-i18n="blog_voip.cta_h">Ready to switch to VoIP?</h3>
+        <p style="color:var(--gray-600);margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto" data-i18n="blog_voip.cta_p">Get a free consultation from the KomTek team. We'll assess your current phone costs and show you exactly how much you could save.</p>
         <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap">
-          <a href="../contact.html" class="btn btn-primary">Get a free quote</a>
-          <a href="../voip.html" class="btn btn-outline">View VoIP plans</a>
+          <a href="../contact.html" class="btn btn-primary" data-i18n="blog_voip.cta_btn1">Get a free quote</a>
+          <a href="../voip.html" class="btn btn-outline" data-i18n="blog_voip.cta_btn2">View VoIP plans</a>
         </div>
       </div>
 
@@ -299,7 +311,7 @@
       <div style="margin-top:2.5rem">
         <a href="index.html" style="font-size:.9rem;color:#1558b0;text-decoration:none;display:inline-flex;align-items:center;gap:.375rem">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:14px;height:14px"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12,19 5,12 12,5"/></svg>
-          Back to blog
+          <span data-i18n="blog_voip.back">Back to blog</span>
         </a>
       </div>
 
@@ -317,27 +329,27 @@
             <img src="../images/logo.png" alt="KomTek" width="110" height="42">
             <span class="logo-fallback">KomTek</span>
           </a>
-          <p>UK-based global telecom and digital services provider, delivering VoIP, digital marketing, and web solutions since 2007.</p>
+          <p data-i18n="footer.tagline">UK-based global telecom and digital services provider, delivering VoIP, digital marketing, and web solutions since 2007.</p>
         </div>
         <div class="footer-col">
-          <h4>Services</h4>
+          <h4 data-i18n="footer.services">Services</h4>
           <ul>
-            <li><a href="../voip.html">VoIP Phone Systems</a></li>
-            <li><a href="../digital-marketing.html">Digital Marketing</a></li>
-            <li><a href="../design-development.html">Website Design</a></li>
-            <li><a href="../design-development.html#it-support">IT Support</a></li>
+            <li><a href="../voip.html" data-i18n="footer.voip">VoIP Phone Systems</a></li>
+            <li><a href="../digital-marketing.html" data-i18n="footer.marketing">Digital Marketing</a></li>
+            <li><a href="../design-development.html" data-i18n="footer.design">Website Design</a></li>
+            <li><a href="../design-development.html#it-support" data-i18n="footer.it">IT Support</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
+          <h4 data-i18n="footer.company">Company</h4>
           <ul>
-            <li><a href="../about.html">About KomTek</a></li>
-            <li><a href="index.html">Blog</a></li>
-            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../about.html" data-i18n="footer.about">About KomTek</a></li>
+            <li><a href="index.html" data-i18n="footer.blog">Blog</a></li>
+            <li><a href="../contact.html" data-i18n="footer.contact_label">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Contact</h4>
+          <h4 data-i18n="footer.contact_label">Contact</h4>
           <ul class="footer-contact">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
