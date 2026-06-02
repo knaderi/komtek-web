@@ -23,13 +23,13 @@
   }
 
   function applyAll(t, fb) {
-    document.querySelectorAll('[data-i18n]').forEach(function (el) {
-      var v = dig(t, el.getAttribute('data-i18n')) || dig(fb, el.getAttribute('data-i18n'));
-      if (v !== null) el.textContent = v;
-    });
     document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
       var v = dig(t, el.getAttribute('data-i18n-html')) || dig(fb, el.getAttribute('data-i18n-html'));
       if (v !== null) el.innerHTML = v;
+    });
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var v = dig(t, el.getAttribute('data-i18n')) || dig(fb, el.getAttribute('data-i18n'));
+      if (v !== null) el.textContent = v;
     });
     document.querySelectorAll('[data-i18n-ph]').forEach(function (el) {
       var v = dig(t, el.getAttribute('data-i18n-ph')) || dig(fb, el.getAttribute('data-i18n-ph'));

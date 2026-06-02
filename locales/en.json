@@ -44,7 +44,9 @@
     "satisfied_clients": "Satisfied Clients",
     "projects": "Projects Completed",
     "years": "Years of Experience",
-    "voip_users": "VoIP Users"
+    "voip_users": "VoIP Users",
+    "skilled_experts": "Skilled Experts",
+    "marketing_revenue": "Marketing Revenue Generated"
   },
   "home": {
     "tag": "UK Telecom & Digital Services Since 2007",
@@ -62,7 +64,23 @@
     "cta_h2": "Ready to Grow Your Business?",
     "cta_p": "Join 531+ UK businesses that trust KomTek for their telephony, digital marketing, and web development needs.",
     "cta_btn1": "Get a Free Consultation",
-    "cta_btn2": "View All Services"
+    "cta_btn2": "View All Services",
+    "why_tag": "Why KomTek",
+    "trusted_h2": "A Trusted Partner for Your Business Technology",
+    "trusted_p": "We combine deep technical expertise with genuine care for our clients — delivering results that matter.",
+    "why1_h": "15+ Years of Expertise",
+    "why1_p": "Operating since 2007, we've built deep knowledge across telecom, digital marketing, and web development.",
+    "why2_h": "99.999% VoIP Uptime Guarantee",
+    "why2_p": "UK data centre redundancy and multi-node network architecture keep your communications always online.",
+    "why3_h": "78-Country VoIP Coverage",
+    "why3_p": "Make and receive calls in 78 countries with 3,723 area codes — perfect for international businesses.",
+    "why4_h": "Transparent, Competitive Pricing",
+    "why4_p": "No hidden fees, no nasty surprises. Clear pricing with flexible monthly payment plans on larger projects.",
+    "why5_h": "250+ Skilled Professionals",
+    "why5_p": "A dedicated team of telecoms engineers, marketers, designers, and developers ready to support your growth.",
+    "why6_h": "Dedicated Account Support",
+    "why6_p": "Reach us by phone, email, or WhatsApp. Our support team is on hand to resolve issues fast.",
+    "clients_label": "Trusted by businesses across London & the UK"
   },
   "voip_page": {
     "tag": "Cloud Telephony",
