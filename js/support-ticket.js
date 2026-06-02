@@ -173,22 +173,27 @@
     setLoading(true);
 
     try {
-      // Insert ticket
-      const { data: inserted, error: insertErr } = await db
-        .from('tickets')
-        .insert(payload)
-        .select('id, ticket_number')
-        .single();
+      // Insert ticket via secure function (bypasses RLS)
+      const { data: rows, error: insertErr } = await db.rpc('submit_ticket', {
+        p_company_name: payload.company_name,
+        p_contact_name: payload.contact_name,
+        p_email:        payload.email,
+        p_phone:        payload.phone || '',
+        p_category:     payload.category,
+        p_subject:      payload.subject,
+        p_description:  payload.description,
+      });
 
       if (insertErr) throw insertErr;
+      const inserted = rows[0];
 
-      // Add initial system update
-      await db.from('ticket_updates').insert({
-        ticket_id:   inserted.id,
-        author_name: 'System',
-        message:     `Ticket created by ${payload.contact_name} (${payload.company_name}). Category: ${payload.category}.`,
-        is_internal: true,
-      });
+      // Add initial system update via secure function
+      await db.rpc('add_ticket_update', {
+        p_ticket_id:   inserted.id,
+        p_author_name: 'System',
+        p_message:     `Ticket created by ${payload.contact_name} (${payload.company_name}). Category: ${payload.category}.`,
+        p_is_internal: true,
+      }).then(() => {});
 
       // Send emails to client and admin
       await sendEmails({ ...payload, ticket_number: inserted.ticket_number });
