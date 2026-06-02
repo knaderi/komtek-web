@@ -134,19 +134,21 @@
         description:   data.description,
       });
 
-      // 2. Notification email to admin
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, {
-        to_email:      ADMIN_EMAIL,
-        to_name:       'Kamran',
-        ticket_number: data.ticket_number,
-        contact_name:  data.contact_name,
-        company_name:  data.company_name,
-        email:         data.email,
-        phone:         data.phone || 'Not provided',
-        category:      data.category,
-        subject:       data.subject,
-        description:   data.description,
-      });
+      // 2. Notification email to all admins
+      for (const adminEmail of ADMIN_EMAILS) {
+        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, {
+          to_email:      adminEmail,
+          to_name:       'KomTek Team',
+          ticket_number: data.ticket_number,
+          contact_name:  data.contact_name,
+          company_name:  data.company_name,
+          email:         data.email,
+          phone:         data.phone || 'Not provided',
+          category:      data.category,
+          subject:       data.subject,
+          description:   data.description,
+        });
+      }
 
     } catch (err) {
       console.warn('EmailJS send failed (non-fatal):', err);

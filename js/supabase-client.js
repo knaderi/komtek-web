@@ -13,7 +13,7 @@ const EMAILJS_SERVICE_ID = 'service_xvqouht';
 const EMAILJS_TEMPLATE_CONFIRMATION = 'template_uhqsx12';
 const EMAILJS_TEMPLATE_ADMIN = 'template_pcz9k0g';
 const EMAILJS_PUBLIC_KEY = 'MbSHC5FQSGOxe2FFo';
-const ADMIN_EMAIL = 'kamran@komtek.co.uk';
+const ADMIN_EMAILS = ['kamran@komtek.co.uk', 'support@komtek.co.uk'];
 
 // Initialise Supabase client
 // The Supabase CDN script must be loaded before this file
