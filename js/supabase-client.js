@@ -9,9 +9,11 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
 // EmailJS configuration (optional — for sending confirmation emails)
 // Get from: https://www.emailjs.com → Account → API Keys
-const EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
-const EMAILJS_TEMPLATE_CONFIRMATION = 'YOUR_EMAILJS_TEMPLATE_ID';
-const EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
+const EMAILJS_SERVICE_ID = 'service_xvqouht';
+const EMAILJS_TEMPLATE_CONFIRMATION = 'template_uhqsx12';
+const EMAILJS_TEMPLATE_ADMIN = 'template_w6f7js9';
+const EMAILJS_PUBLIC_KEY = 'MbSHC5FQSGOxe2FFo';
+const ADMIN_EMAIL = 'kamran@komtek.co.uk';
 
 // Initialise Supabase client
 // The Supabase CDN script must be loaded before this file

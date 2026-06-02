@@ -112,8 +112,8 @@
     }
   }
 
-  // ── EmailJS confirmation (optional) ──────────────────────
-  async function sendConfirmation(data) {
+  // ── EmailJS emails (optional) ────────────────────────────
+  async function sendEmails(data) {
     if (
       typeof emailjs === 'undefined' ||
       EMAILJS_SERVICE_ID === 'YOUR_EMAILJS_SERVICE_ID' ||
@@ -122,16 +122,33 @@
 
     try {
       emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      // 1. Confirmation email to client
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONFIRMATION, {
-        to_email:     data.email,
-        to_name:      data.contact_name,
-        ticket_number:data.ticket_number,
-        company:      data.company_name,
-        subject:      data.subject,
-        category:     data.category,
+        to_email:      data.email,
+        to_name:       data.contact_name,
+        ticket_number: data.ticket_number,
+        company_name:  data.company_name,
+        subject:       data.subject,
+        category:      data.category,
+        description:   data.description,
       });
+
+      // 2. Notification email to admin
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, {
+        to_email:      ADMIN_EMAIL,
+        to_name:       'Kamran',
+        ticket_number: data.ticket_number,
+        contact_name:  data.contact_name,
+        company_name:  data.company_name,
+        email:         data.email,
+        phone:         data.phone || 'Not provided',
+        category:      data.category,
+        subject:       data.subject,
+        description:   data.description,
+      });
+
     } catch (err) {
-      // Fail silently — ticket was already created
       console.warn('EmailJS send failed (non-fatal):', err);
     }
   }
@@ -173,8 +190,8 @@
         is_internal: true,
       });
 
-      // Try email confirmation
-      await sendConfirmation({ ...payload, ticket_number: inserted.ticket_number });
+      // Send emails to client and admin
+      await sendEmails({ ...payload, ticket_number: inserted.ticket_number });
 
       // Show success
       ticketNumEl.textContent = inserted.ticket_number;
