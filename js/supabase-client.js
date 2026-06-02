@@ -11,7 +11,7 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 // Get from: https://www.emailjs.com → Account → API Keys
 const EMAILJS_SERVICE_ID = 'service_xvqouht';
 const EMAILJS_TEMPLATE_CONFIRMATION = 'template_uhqsx12';
-const EMAILJS_TEMPLATE_ADMIN = 'template_w6f7js9';
+const EMAILJS_TEMPLATE_ADMIN = 'template_pcz9k0g';
 const EMAILJS_PUBLIC_KEY = 'MbSHC5FQSGOxe2FFo';
 const ADMIN_EMAIL = 'kamran@komtek.co.uk';
 
