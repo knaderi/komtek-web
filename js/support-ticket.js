@@ -112,19 +112,22 @@
     }
   }
 
-  // ── EmailJS emails (optional) ────────────────────────────
+  // ── EmailJS emails ────────────────────────────────────────
   async function sendEmails(data) {
-    if (
-      typeof emailjs === 'undefined' ||
-      EMAILJS_SERVICE_ID === 'YOUR_EMAILJS_SERVICE_ID' ||
-      EMAILJS_PUBLIC_KEY === 'YOUR_EMAILJS_PUBLIC_KEY'
-    ) return; // Not configured — skip silently
+    console.log('sendEmails called, emailjs available:', typeof emailjs !== 'undefined');
+
+    if (typeof emailjs === 'undefined') {
+      console.error('EmailJS library not loaded');
+      return;
+    }
 
     try {
-      emailjs.init(EMAILJS_PUBLIC_KEY);
+      // v4 init
+      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+      console.log('EmailJS initialised');
 
-      // 1. Confirmation email to client
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONFIRMATION, {
+      // 1. Confirmation to client
+      const r1 = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONFIRMATION, {
         to_email:      data.email,
         to_name:       data.contact_name,
         ticket_number: data.ticket_number,
@@ -133,10 +136,11 @@
         category:      data.category,
         description:   data.description,
       });
+      console.log('Client confirmation sent:', r1.status, r1.text);
 
-      // 2. Notification email to all admins
+      // 2. Admin notifications
       for (const adminEmail of ADMIN_EMAILS) {
-        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, {
+        const r2 = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, {
           to_email:      adminEmail,
           to_name:       'KomTek Team',
           ticket_number: data.ticket_number,
@@ -148,10 +152,11 @@
           subject:       data.subject,
           description:   data.description,
         });
+        console.log('Admin notification sent to', adminEmail, ':', r2.status, r2.text);
       }
 
     } catch (err) {
-      console.warn('EmailJS send failed (non-fatal):', err);
+      console.error('EmailJS error:', err);
     }
   }
 
