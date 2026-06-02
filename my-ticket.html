@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Support Ticket — KomTek</title>
+  <meta name="description" content="Check the status of your KomTek support ticket. Enter your email and ticket number to view updates.">
+  <link rel="canonical" href="https://www.komtek.co.uk/my-ticket.html">
+  <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+  <meta name="theme-color" content="#1558b0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/i18n.js" defer></script>
+</head>
+<body>
+
+<!-- ======= TOPBAR ======= -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="lang-sw lang-sw-topbar" tabindex="0" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="lang-label">EN</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+      <div class="lang-drop" role="menu">
+        <button data-lang-opt="en" onclick="i18nSet('en')" role="menuitem">English</button>
+        <button data-lang-opt="es" onclick="i18nSet('es')" role="menuitem">Español</button>
+        <button data-lang-opt="fr" onclick="i18nSet('fr')" role="menuitem">Français</button>
+        <button data-lang-opt="de" onclick="i18nSet('de')" role="menuitem">Deutsch</button>
+      </div>
+    </div>
+    <a href="portal/index.html" class="topbar-link topbar-staff-login">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+      Staff Login
+    </a>
+    <a href="tel:03333056676" class="topbar-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      0333 305 6676
+    </a>
+    <a href="mailto:info@komtek.co.uk" class="topbar-link topbar-email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      info@komtek.co.uk
+    </a>
+  </div>
+</div>
+
+<!-- ======= NAVIGATION ======= -->
+<nav class="navbar" aria-label="Main navigation">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo" aria-label="KomTek Home">
+      <img src="images/logo.png" alt="KomTek" width="120" height="46">
+      <span class="logo-fallback">KomTek</span>
+    </a>
+    <div class="lang-sw lang-sw-nav" tabindex="0" aria-label="Select language">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="lang-label">EN</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px" aria-hidden="true"><polyline points="6,9 12,15 18,9"/></svg>
+      <div class="lang-drop" role="menu">
+        <button data-lang-opt="en" onclick="i18nSet('en')" role="menuitem">English</button>
+        <button data-lang-opt="es" onclick="i18nSet('es')" role="menuitem">Español</button>
+        <button data-lang-opt="fr" onclick="i18nSet('fr')" role="menuitem">Français</button>
+        <button data-lang-opt="de" onclick="i18nSet('de')" role="menuitem">Deutsch</button>
+      </div>
+    </div>
+    <ul class="navbar-nav" role="list">
+      <li class="nav-item"><a href="index.html" class="nav-link" data-i18n="nav.home">Home</a></li>
+      <li class="nav-item">
+        <a href="voip.html" class="nav-link"><span data-i18n="nav.voip">VoIP Services</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="voip.html#home-voip" role="menuitem">Home VoIP Phone Service</a>
+          <a href="voip.html#business-voip" role="menuitem">Business VoIP Phone Service</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="digital-marketing.html" class="nav-link"><span data-i18n="nav.marketing">Digital Marketing</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="digital-marketing.html#seo" role="menuitem">SEO</a>
+          <a href="digital-marketing.html#social-media" role="menuitem">Social Media Marketing</a>
+          <a href="digital-marketing.html#google-ads" role="menuitem">Google Ads</a>
+          <a href="digital-marketing.html#gbp" role="menuitem">Google Business Profile</a>
+          <a href="digital-marketing.html#spotify" role="menuitem">Spotify Advertising</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a href="design-development.html" class="nav-link"><span data-i18n="nav.design">Design &amp; Dev</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="design-development.html#website-design" role="menuitem">Website Design</a>
+          <a href="design-development.html#website-development" role="menuitem">Website Development</a>
+          <a href="design-development.html#ecommerce" role="menuitem">E-commerce Development</a>
+          <a href="design-development.html#cms" role="menuitem">CMS Website</a>
+          <a href="design-development.html#it-support" role="menuitem">IT Support</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="about.html" class="nav-link" data-i18n="nav.about">About</a></li>
+      <li class="nav-item"><a href="blog/index.html" class="nav-link" data-i18n="nav.blog">Blog</a></li>
+      <li class="nav-item"><a href="support.html" class="nav-link active" data-i18n="nav.support">Support</a></li>
+    </ul>
+    <div class="navbar-right">
+      <a href="signup.html" class="btn btn-accent" data-i18n="nav.signup">Sign Up</a>
+      <a href="contact.html" class="btn btn-primary" data-i18n="nav.contact">Contact Us</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="voip.html" class="mobile-nav-link">VoIP Services</a>
+    <a href="digital-marketing.html" class="mobile-nav-link">Digital Marketing</a>
+    <a href="design-development.html" class="mobile-nav-link">Design &amp; Development</a>
+    <a href="about.html" class="mobile-nav-link">About</a>
+    <a href="blog/index.html" class="mobile-nav-link">Blog</a>
+    <a href="support.html" class="mobile-nav-link" style="color:var(--primary);font-weight:700">Support</a>
+    <a href="signup.html" class="mobile-nav-link" style="color:var(--accent);font-weight:700">Sign Up</a>
+    <a href="contact.html" class="mobile-nav-link">Contact Us</a>
+  </div>
+</nav>
+
+<!-- ======= PAGE HERO ======= -->
+<section class="page-hero" aria-label="My Ticket hero">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><polyline points="9,18 15,12 9,6"/></svg>
+      <a href="support.html">Support</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><polyline points="9,18 15,12 9,6"/></svg>
+      <span>Track Ticket</span>
+    </div>
+    <h1 style="margin:.75rem 0 .875rem">Track Your Support Ticket</h1>
+    <p>Enter your email address and ticket number to see the current status and any updates from our team.</p>
+  </div>
+</section>
+
+<!-- ======= LOOKUP ======= -->
+<section class="section section-light" style="padding:3rem 0 5rem">
+  <div class="container" style="max-width:680px">
+
+    <!-- Lookup Form -->
+    <div id="lookupWrap">
+      <div class="card" style="padding:2.25rem">
+        <h2 style="font-size:1.3rem;margin-bottom:.375rem">Find Your Ticket</h2>
+        <p style="color:var(--muted);font-size:.9rem;margin-bottom:1.75rem">Your ticket number was included in your confirmation email (e.g. KT-2026-00001).</p>
+
+        <div id="lookupError" class="alert alert-error" style="display:none"></div>
+
+        <form id="lookupForm" novalidate>
+          <div class="form-field">
+            <label for="lookupEmail">Email Address</label>
+            <input type="email" id="lookupEmail" placeholder="The email you used when submitting the ticket" autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="lookupTicket">Ticket Number</label>
+            <input type="text" id="lookupTicket" placeholder="e.g. KT-2026-00001" style="text-transform:uppercase" autocomplete="off">
+          </div>
+          <button type="submit" id="lookupBtn" class="btn btn-primary btn-full" style="justify-content:center;padding:.9rem">
+            Track Ticket
+          </button>
+        </form>
+      </div>
+
+      <div style="text-align:center;margin-top:1.25rem">
+        <a href="support.html" style="color:var(--primary);font-size:.875rem">
+          Don't have a ticket yet? Create one here &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Result Panel (hidden until lookup) -->
+    <div id="ticketResult" style="display:none;margin-top:2rem">
+
+      <!-- Ticket Card -->
+      <div class="card" style="padding:0;overflow:hidden">
+
+        <!-- Header -->
+        <div style="background:linear-gradient(135deg,var(--primary-dark),#1c6dd0);color:#fff;padding:1.5rem">
+          <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;margin-bottom:.5rem">
+            <span style="font-size:.85rem;font-weight:700;opacity:.75">Ticket</span>
+            <span style="font-weight:800;font-size:1.1rem" id="resTicketNum">KT-2026-00001</span>
+            <span class="badge badge-voip" id="resCategory">VoIP</span>
+            <span class="badge badge-open" id="resStatus">Open</span>
+          </div>
+          <div style="display:flex;gap:2rem;flex-wrap:wrap;font-size:.82rem;opacity:.8">
+            <span>Submitted: <strong id="resCreated">—</strong></span>
+            <span>Last updated: <strong id="resUpdated">—</strong></span>
+          </div>
+        </div>
+
+        <!-- Contact info row -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1.25rem 1.5rem;background:var(--bg-light);border-bottom:1px solid var(--border)">
+          <div>
+            <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">Company</div>
+            <div style="font-weight:600;margin-top:.2rem" id="resCompany">—</div>
+          </div>
+          <div>
+            <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">Contact</div>
+            <div style="font-weight:600;margin-top:.2rem" id="resContact">—</div>
+          </div>
+          <div>
+            <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">Assigned To</div>
+            <div style="font-weight:600;margin-top:.2rem" id="resAssigned">—</div>
+          </div>
+        </div>
+
+        <!-- Subject + Description -->
+        <div style="padding:1.5rem">
+          <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:.875rem" id="resSubject">—</h3>
+          <div style="background:var(--bg-light);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:.9rem;line-height:1.7;white-space:pre-wrap;color:var(--text)" id="resDescription"></div>
+        </div>
+
+        <!-- Timeline -->
+        <div style="border-top:1px solid var(--border);padding:1.5rem">
+          <h4 style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:1.25rem">Updates &amp; Activity</h4>
+          <div id="resTimeline"></div>
+        </div>
+
+      </div>
+
+      <!-- Help box -->
+      <div class="card" style="margin-top:1.5rem;padding:1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+        <div style="flex:1;min-width:200px">
+          <div style="font-weight:600;margin-bottom:.2rem">Still need help?</div>
+          <div style="font-size:.875rem;color:var(--muted)">Call our support team directly — we're available Mon–Fri, 9am–5:30pm.</div>
+        </div>
+        <a href="tel:03333056676" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          0333 305 6676
+        </a>
+      </div>
+
+      <!-- Search again -->
+      <div style="text-align:center;margin-top:1.5rem">
+        <button onclick="document.getElementById('ticketResult').style.display='none';document.getElementById('lookupForm').reset();" class="btn btn-outline" style="font-size:.875rem">
+          Search Another Ticket
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======= FOOTER ======= -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="KomTek Home">
+            <img src="images/logo.png" alt="KomTek" width="110" height="42">
+            <span class="logo-fallback">KomTek</span>
+          </a>
+          <p>UK-based global telecom and digital services provider, delivering VoIP, digital marketing, and web solutions since 2007.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="voip.html">VoIP Phone Systems</a></li>
+            <li><a href="digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="design-development.html">Website Design</a></li>
+            <li><a href="design-development.html#it-support">IT Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About KomTek</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="support.html">Support</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-contact">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.6 19.79 19.79 0 0 1 1.62 5.06 2 2 0 0 1 3.59 3H6.6a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 10.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:03333056676">033 33 05 6676</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@komtek.co.uk">info@komtek.co.uk</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>8B Accommodation Road, Golders Green, London NW11 8ED</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;width:100%">
+      <p>&copy; 2026 KomTek Ltd. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/442080992757" class="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="Chat with KomTek on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script src="js/main.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-client.js"></script>
+<script src="js/my-ticket.js"></script>
+</body>
+</html>

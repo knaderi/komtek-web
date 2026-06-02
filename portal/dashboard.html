@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — KomTek Support Portal</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+  <meta name="theme-color" content="#1558b0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="portal-wrap">
+
+<!-- ======= PORTAL NAV ======= -->
+<nav class="portal-nav">
+  <div class="portal-nav-left">
+    <a href="../index.html">
+      <img src="../images/logo.png" alt="KomTek" style="height:36px;width:auto">
+    </a>
+    <span style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding-left:1rem;border-left:1px solid var(--border)">Support Portal</span>
+    <div class="portal-nav-links">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="dashboard.html">All Tickets</a>
+      <a href="users.html" data-admin-only>Users</a>
+    </div>
+  </div>
+  <div class="portal-nav-right">
+    <a href="../support.html" target="_blank" class="btn btn-outline" style="padding:.4rem .875rem;font-size:.8rem">
+      + New Ticket
+    </a>
+    <div style="display:flex;align-items:center;gap:.625rem">
+      <div style="width:32px;height:32px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;font-weight:700">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+      </div>
+      <span id="portalUserName" style="font-size:.875rem;font-weight:500;color:var(--text)">Loading…</span>
+    </div>
+    <button id="logoutBtn" class="btn btn-outline" style="padding:.4rem .875rem;font-size:.8rem">Log Out</button>
+  </div>
+</nav>
+
+<!-- ======= MAIN CONTENT ======= -->
+<main class="portal-content">
+
+  <div class="portal-header">
+    <h1>Support Dashboard</h1>
+    <p>Manage and respond to customer support tickets</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-card-val" id="statOpen">—</div>
+      <div class="stat-card-lbl">Open Tickets</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-val" id="statInProgress" style="color:var(--accent)">—</div>
+      <div class="stat-card-lbl">In Progress</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-val" id="statResolved" style="color:#059669">—</div>
+      <div class="stat-card-lbl">Resolved Today</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card-val" id="statTotal" style="color:var(--muted)">—</div>
+      <div class="stat-card-lbl">Total Tickets</div>
+    </div>
+  </div>
+
+  <!-- Filters -->
+  <div class="filter-bar">
+    <select id="filterStatus">
+      <option value="">All Statuses</option>
+      <option value="open">Open</option>
+      <option value="in-progress">In Progress</option>
+      <option value="awaiting-client">Awaiting Client</option>
+      <option value="resolved">Resolved</option>
+      <option value="closed">Closed</option>
+    </select>
+    <select id="filterCategory">
+      <option value="">All Categories</option>
+      <option value="voip">VoIP</option>
+      <option value="it-support">IT Support</option>
+      <option value="digital-marketing">Digital Marketing</option>
+      <option value="web-design">Web Design</option>
+    </select>
+    <select id="filterAssigned">
+      <option value="">All Agents</option>
+    </select>
+    <input type="search" id="searchInput" placeholder="Search ticket #, company, subject…">
+  </div>
+
+  <!-- Tickets Table -->
+  <div id="ticketsTable" class="ticket-table-wrap">
+    <table class="ticket-table" aria-label="Support tickets">
+      <thead>
+        <tr>
+          <th>Ticket #</th>
+          <th>Company</th>
+          <th>Category</th>
+          <th>Subject</th>
+          <th>Status</th>
+          <th>Priority</th>
+          <th>Assigned To</th>
+          <th>Created</th>
+          <th style="width:70px">Action</th>
+        </tr>
+      </thead>
+      <tbody id="ticketsBody">
+        <tr><td colspan="9" style="text-align:center;padding:3rem;color:var(--muted)">Loading tickets…</td></tr>
+      </tbody>
+    </table>
+    <div class="pagination" id="pagination"></div>
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/portal-auth.js"></script>
+<script src="../js/portal-dashboard.js"></script>
+</body>
+</html>

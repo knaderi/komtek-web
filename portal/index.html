@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Portal Login — KomTek</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+  <meta name="theme-color" content="#1558b0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="portal-login-wrap">
+  <div class="portal-login-card">
+
+    <div class="portal-login-logo">
+      <a href="../index.html">
+        <img src="../images/logo.png" alt="KomTek" style="height:48px;width:auto;display:block;margin:0 auto">
+      </a>
+      <div style="margin-top:1rem;font-size:1.25rem;font-weight:800;color:var(--text)">Staff Portal</div>
+      <div style="font-size:.85rem;color:var(--muted);margin-top:.25rem">Sign in to manage support tickets</div>
+    </div>
+
+    <div id="loginError" class="alert alert-error" style="display:none"></div>
+
+    <form id="loginForm" novalidate>
+      <div class="form-field">
+        <label for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" placeholder="your@komtek.co.uk" required autocomplete="email">
+      </div>
+      <div class="form-field">
+        <label for="loginPassword">Password</label>
+        <div style="position:relative">
+          <input type="password" id="loginPassword" placeholder="Your password" required autocomplete="current-password" style="padding-right:2.75rem">
+          <button type="button" id="togglePw" style="position:absolute;right:.75rem;top:50%;transform:translateY(-50%);color:var(--muted);padding:0;line-height:1" aria-label="Toggle password visibility">
+            <svg id="eyeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+      <button type="submit" id="loginBtn" class="btn btn-primary btn-full" style="justify-content:center;padding:.9rem;margin-top:.5rem">
+        Sign In
+      </button>
+    </form>
+
+    <div style="text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+      <p style="font-size:.8rem;color:var(--muted)">
+        KomTek Internal Portal &middot; Not a customer?
+        <a href="../contact.html" style="color:var(--primary)">Contact us</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  const form     = document.getElementById('loginForm');
+  const errorBox = document.getElementById('loginError');
+  const loginBtn = document.getElementById('loginBtn');
+
+  // If already logged in, redirect
+  db.auth.getSession().then(({ data: { session } }) => {
+    if (session) window.location.href = 'dashboard.html';
+  });
+
+  // Toggle password visibility
+  document.getElementById('togglePw')?.addEventListener('click', function () {
+    const input = document.getElementById('loginPassword');
+    const isText = input.type === 'text';
+    input.type = isText ? 'password' : 'text';
+    document.getElementById('eyeIcon').innerHTML = isText
+      ? '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>'
+      : '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/>';
+  });
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    errorBox.style.display = 'none';
+
+    const email    = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+
+    if (!email || !password) {
+      errorBox.textContent = 'Please enter your email and password.';
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    loginBtn.disabled = true;
+    loginBtn.innerHTML = `
+      <svg style="width:18px;height:18px;animation:spin 1s linear infinite" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+      </svg>
+      Signing in…`;
+
+    const { data, error } = await db.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      let msg = 'Sign in failed. Please check your credentials.';
+      if (error.message?.includes('Invalid login')) msg = 'Incorrect email or password. Please try again.';
+      if (error.message?.includes('Email not confirmed')) msg = 'Please confirm your email address first. Check your inbox.';
+      errorBox.textContent = msg;
+      errorBox.style.display = 'block';
+      loginBtn.disabled = false;
+      loginBtn.textContent = 'Sign In';
+      return;
+    }
+
+    // Check profile is active
+    const { data: profile } = await db
+      .from('profiles')
+      .select('is_active, full_name')
+      .eq('id', data.user.id)
+      .single();
+
+    if (profile && !profile.is_active) {
+      await db.auth.signOut();
+      errorBox.textContent = 'Your account has been deactivated. Contact your administrator.';
+      errorBox.style.display = 'block';
+      loginBtn.disabled = false;
+      loginBtn.textContent = 'Sign In';
+      return;
+    }
+
+    window.location.href = 'dashboard.html';
+  });
+})();
+</script>
+<style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+</body>
+</html>

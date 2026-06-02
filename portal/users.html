@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Management — KomTek Support Portal</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+  <meta name="theme-color" content="#1558b0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="portal-wrap">
+
+<!-- ======= PORTAL NAV ======= -->
+<nav class="portal-nav">
+  <div class="portal-nav-left">
+    <a href="../index.html">
+      <img src="../images/logo.png" alt="KomTek" style="height:36px;width:auto">
+    </a>
+    <span style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding-left:1rem;border-left:1px solid var(--border)">Support Portal</span>
+    <div class="portal-nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="dashboard.html">All Tickets</a>
+      <a href="users.html" class="active">Users</a>
+    </div>
+  </div>
+  <div class="portal-nav-right">
+    <div style="display:flex;align-items:center;gap:.625rem">
+      <div style="width:32px;height:32px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+      </div>
+      <span id="portalUserName" style="font-size:.875rem;font-weight:500;color:var(--text)">Loading…</span>
+    </div>
+    <button id="logoutBtn" class="btn btn-outline" style="padding:.4rem .875rem;font-size:.8rem">Log Out</button>
+  </div>
+</nav>
+
+<!-- ======= MAIN CONTENT ======= -->
+<main class="portal-content">
+
+  <div class="portal-header" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+    <div>
+      <h1>User Management</h1>
+      <p>Manage agents and administrators (Admin only)</p>
+    </div>
+    <button onclick="openAddUserModal()" class="btn btn-primary">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      Add New User
+    </button>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="alert alert-success" style="display:none;position:fixed;top:1.5rem;right:1.5rem;z-index:9999;min-width:260px;box-shadow:var(--shadow-hover)"></div>
+
+  <!-- Important note -->
+  <div class="alert" style="background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;margin-bottom:1.5rem;padding:1rem 1.25rem">
+    <strong>Note:</strong> To add new staff users, go to your
+    <a href="https://supabase.com/dashboard" target="_blank" rel="noopener" style="color:var(--primary);font-weight:600">Supabase Dashboard</a>
+    &rarr; Authentication &rarr; Users &rarr; <strong>Invite user</strong>.
+    After they accept the invite, their profile will appear here and you can set their role.
+  </div>
+
+  <!-- Users Table -->
+  <div class="ticket-table-wrap">
+    <table class="ticket-table" aria-label="Users">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th style="width:120px">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="usersBody">
+        <tr><td colspan="5" style="text-align:center;padding:3rem;color:var(--muted)">Loading users…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<!-- ======= ADD USER MODAL ======= -->
+<div id="addUserModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:2000;align-items:center;justify-content:center;padding:1rem">
+  <div style="background:#fff;border-radius:var(--radius);padding:2rem;width:100%;max-width:480px;box-shadow:0 20px 60px rgba(0,0,0,.25);position:relative">
+    <button onclick="closeAddUserModal()" style="position:absolute;top:1rem;right:1rem;color:var(--muted);padding:.25rem" aria-label="Close modal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <h2 style="font-size:1.25rem;margin-bottom:.375rem">Add New User</h2>
+    <p style="color:var(--muted);font-size:.875rem;margin-bottom:1.5rem">To create a new staff account, use Supabase's invite feature.</p>
+
+    <div id="modalError" class="alert alert-error" style="display:none"></div>
+
+    <div style="background:var(--bg-light);border-radius:var(--radius-sm);padding:1.25rem;margin-bottom:1.5rem">
+      <h4 style="font-size:.9rem;margin-bottom:.875rem">Step-by-step:</h4>
+      <ol style="margin-left:1.25rem;font-size:.875rem;color:var(--muted);line-height:2">
+        <li>Go to <a href="https://supabase.com/dashboard" target="_blank" rel="noopener" style="color:var(--primary)">supabase.com/dashboard</a></li>
+        <li>Open your <strong>komtek-tickets</strong> project</li>
+        <li>Click <strong>Authentication → Users → Invite user</strong></li>
+        <li>Enter the user's email and send the invite</li>
+        <li>They set their own password via the emailed link</li>
+        <li>Their profile appears here — set their role below</li>
+      </ol>
+    </div>
+
+    <div id="modalForm">
+      <div class="form-field">
+        <label for="modalEmail">Email to update role for</label>
+        <input type="email" id="modalEmail" placeholder="user@komtek.co.uk">
+      </div>
+      <div class="form-field">
+        <label for="modalRole">Role</label>
+        <select id="modalRole">
+          <option value="agent">Agent</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <button onclick="updateRoleByEmail()" class="btn btn-primary" style="width:100%;justify-content:center">
+        Update Role
+      </button>
+    </div>
+
+    <button onclick="closeAddUserModal()" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:.75rem">Close</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/portal-auth.js"></script>
+<script src="../js/portal-users.js"></script>
+<script>
+// Update role by email (for the modal)
+async function updateRoleByEmail() {
+  const email = document.getElementById('modalEmail').value.trim().toLowerCase();
+  const role  = document.getElementById('modalRole').value;
+  const err   = document.getElementById('modalError');
+
+  if (!email) {
+    err.textContent = 'Please enter an email address.';
+    err.style.display = 'block';
+    return;
+  }
+
+  const { data, error } = await db.from('profiles').update({ role }).eq('email', email).select();
+
+  if (error || !data || data.length === 0) {
+    err.textContent = error ? error.message : 'No user found with that email. Have they accepted their invite?';
+    err.style.display = 'block';
+    return;
+  }
+
+  err.style.display = 'none';
+  closeAddUserModal();
+  document.getElementById('toast').textContent = `Role updated to "${role}" for ${email}.`;
+  document.getElementById('toast').style.display = 'block';
+  setTimeout(() => document.getElementById('toast').style.display = 'none', 3500);
+
+  // Reload users
+  location.reload();
+}
+</script>
+</body>
+</html>

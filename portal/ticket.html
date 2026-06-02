@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket — KomTek Support Portal</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+  <meta name="theme-color" content="#1558b0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="portal-wrap">
+
+<!-- ======= PORTAL NAV ======= -->
+<nav class="portal-nav">
+  <div class="portal-nav-left">
+    <a href="../index.html">
+      <img src="../images/logo.png" alt="KomTek" style="height:36px;width:auto">
+    </a>
+    <span style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding-left:1rem;border-left:1px solid var(--border)">Support Portal</span>
+    <div class="portal-nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="dashboard.html">All Tickets</a>
+      <a href="users.html" data-admin-only>Users</a>
+    </div>
+  </div>
+  <div class="portal-nav-right">
+    <div style="display:flex;align-items:center;gap:.625rem">
+      <div style="width:32px;height:32px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;font-weight:700">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><circle cx="12" cy="7" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+      </div>
+      <span id="portalUserName" style="font-size:.875rem;font-weight:500;color:var(--text)">Loading…</span>
+    </div>
+    <button id="logoutBtn" class="btn btn-outline" style="padding:.4rem .875rem;font-size:.8rem">Log Out</button>
+  </div>
+</nav>
+
+<!-- ======= MAIN CONTENT ======= -->
+<main class="portal-content">
+
+  <!-- Back link -->
+  <div style="margin-bottom:1.5rem">
+    <a href="dashboard.html" style="color:var(--primary);font-size:.875rem;display:inline-flex;align-items:center;gap:.35rem">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:15px;height:15px"><polyline points="15,18 9,12 15,6"/></svg>
+      Back to Dashboard
+    </a>
+  </div>
+
+  <div id="ticketContent">
+    <div class="ticket-detail-grid">
+
+      <!-- Left: Ticket Main -->
+      <div>
+        <div class="ticket-main">
+
+          <!-- Header -->
+          <div class="ticket-header">
+            <div class="ticket-meta">
+              <span style="font-size:.85rem;font-weight:700;color:var(--muted)" id="ticketNumTitle">KT-XXXX-XXXXX</span>
+              <span class="badge badge-voip" id="ticketCatBadge">VoIP</span>
+              <span class="badge badge-open" id="ticketStatusBadge">Open</span>
+            </div>
+          </div>
+
+          <!-- Contact info grid -->
+          <div class="ticket-info-grid">
+            <div class="ticket-info-item">
+              <label>Company</label>
+              <span id="infoCompany">—</span>
+            </div>
+            <div class="ticket-info-item">
+              <label>Contact Name</label>
+              <span id="infoContact">—</span>
+            </div>
+            <div class="ticket-info-item">
+              <label>Email</label>
+              <span id="infoEmail">—</span>
+            </div>
+            <div class="ticket-info-item">
+              <label>Phone</label>
+              <span id="infoPhone">—</span>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="ticket-description">
+            <h3>Subject</h3>
+            <p id="ticketSubject" style="font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:1.25rem"></p>
+            <h3>Description</h3>
+            <div id="ticketDescription" style="background:var(--bg-light);border-radius:var(--radius-sm);padding:1rem 1.25rem;font-size:.9rem;line-height:1.75;white-space:pre-wrap;color:var(--text)"></div>
+          </div>
+
+          <!-- Timeline -->
+          <div class="ticket-timeline">
+            <h3 style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:1.25rem">Activity &amp; Updates</h3>
+            <div id="timeline">
+              <p style="color:var(--muted);font-size:.9rem">Loading…</p>
+            </div>
+          </div>
+
+          <!-- Add Update -->
+          <div class="timeline-add">
+            <h3 style="font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.875rem">Add Update / Note</h3>
+            <textarea id="updateMessage" placeholder="Type a reply or internal note…" rows="4"></textarea>
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-top:.75rem;flex-wrap:wrap;gap:.75rem">
+              <label style="display:flex;align-items:center;gap:.5rem;font-size:.875rem;cursor:pointer">
+                <input type="checkbox" id="isInternal" style="width:16px;height:16px;cursor:pointer">
+                Internal note (not visible to client)
+              </label>
+              <button id="btnAddUpdate" class="btn btn-primary" style="padding:.6rem 1.25rem;font-size:.875rem">
+                Add Update
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right: Sidebar -->
+      <div class="ticket-sidebar">
+
+        <!-- Flash message -->
+        <div id="sidebarMsg" class="alert" style="display:none"></div>
+
+        <!-- Status -->
+        <div class="sidebar-card">
+          <h3>Status</h3>
+          <select id="sideStatus">
+            <option value="open">Open</option>
+            <option value="in-progress">In Progress</option>
+            <option value="awaiting-client">Awaiting Client</option>
+            <option value="resolved">Resolved</option>
+            <option value="closed">Closed</option>
+          </select>
+          <button id="btnUpdateStatus" class="btn btn-primary" style="width:100%;justify-content:center;padding:.6rem">Update Status</button>
+        </div>
+
+        <!-- Priority -->
+        <div class="sidebar-card">
+          <h3>Priority</h3>
+          <select id="sidePriority">
+            <option value="low">Low</option>
+            <option value="normal">Normal</option>
+            <option value="high">High</option>
+            <option value="urgent">Urgent</option>
+          </select>
+          <button id="btnUpdatePriority" class="btn btn-outline" style="width:100%;justify-content:center;padding:.6rem;font-size:.875rem">Update Priority</button>
+        </div>
+
+        <!-- Assign -->
+        <div class="sidebar-card">
+          <h3>Assigned To</h3>
+          <select id="sideAssign">
+            <option value="">— Unassigned —</option>
+          </select>
+          <button id="btnAssign" class="btn btn-outline" style="width:100%;justify-content:center;padding:.6rem;font-size:.875rem">Assign</button>
+        </div>
+
+        <!-- Metadata -->
+        <div class="sidebar-card">
+          <h3>Ticket Info</h3>
+          <div style="display:flex;flex-direction:column;gap:.625rem">
+            <div>
+              <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">Created</div>
+              <div style="font-size:.875rem;margin-top:.2rem" id="sideCreated">—</div>
+            </div>
+            <div>
+              <div style="font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)">Last Updated</div>
+              <div style="font-size:.875rem;margin-top:.2rem" id="sideUpdated">—</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase-client.js"></script>
+<script src="../js/portal-auth.js"></script>
+<script src="../js/portal-ticket.js"></script>
+</body>
+</html>
