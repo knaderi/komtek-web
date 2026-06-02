@@ -366,8 +366,9 @@ p:last-child{margin-bottom:0}
 }
 
 @media(max-width:768px){
-  .topbar-inner{justify-content:center;gap:1.25rem;padding:.5rem 1rem}
+  .topbar-inner{justify-content:center;gap:1rem;padding:.5rem 1rem}
   .lang-sw{font-size:.72rem;padding:.2rem .45rem}
+  .topbar-email{display:none}
   .navbar-nav{display:none}
   .navbar-right .navbar-phone,.navbar-right .btn-primary,.navbar-right .btn-accent{display:none}
   .menu-toggle{display:flex}
