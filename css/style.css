@@ -127,7 +127,7 @@ p:last-child{margin-bottom:0}
 
 /* Mobile nav */
 .mobile-nav{display:none;background:#fff;border-top:1px solid var(--border);padding:.25rem 0 .5rem}
-.mobile-nav.open{display:block;max-height:calc(100vh - 120px);overflow-y:auto}
+.mobile-nav.open{display:block;max-height:calc(100vh - 120px);overflow-y:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth}
 .mobile-nav a{display:block;padding:.875rem 1.5rem;font-weight:500;font-size:.95rem;border-bottom:1px solid var(--border);transition:var(--ease)}
 .mobile-nav a:hover{color:var(--primary);background:var(--primary-light)}
 .mobile-nav .mobile-sub a{padding:.75rem 2.5rem;font-size:.875rem;color:var(--muted)}
