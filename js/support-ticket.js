@@ -112,51 +112,23 @@
     }
   }
 
-  // ── EmailJS emails ────────────────────────────────────────
+  // ── Send emails via server-side PHP ──────────────────────
   async function sendEmails(data) {
-    console.log('sendEmails called, emailjs available:', typeof emailjs !== 'undefined');
-
-    if (typeof emailjs === 'undefined') {
-      console.error('EmailJS library not loaded');
-      return;
-    }
-
     try {
-      // v4 init
-      emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-      console.log('EmailJS initialised');
-
-      // 1. Confirmation to client
-      const r1 = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CONFIRMATION, {
-        to_email:      data.email,
-        to_name:       data.contact_name,
-        ticket_number: data.ticket_number,
-        company_name:  data.company_name,
-        subject:       data.subject,
-        category:      data.category,
-        description:   data.description,
-      });
-      console.log('Client confirmation sent:', r1.status, r1.text);
-
-      // 2. Admin notifications
-      for (const adminEmail of ADMIN_EMAILS) {
-        const r2 = await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ADMIN, {
-          to_email:      adminEmail,
-          to_name:       'KomTek Team',
-          ticket_number: data.ticket_number,
-          contact_name:  data.contact_name,
-          company_name:  data.company_name,
-          email:         data.email,
-          phone:         data.phone || 'Not provided',
-          category:      data.category,
-          subject:       data.subject,
-          description:   data.description,
-        });
-        console.log('Admin notification sent to', adminEmail, ':', r2.status, r2.text);
-      }
-
+      const fd = new FormData();
+      fd.append('ticket_number', data.ticket_number);
+      fd.append('company_name',  data.company_name);
+      fd.append('contact_name',  data.contact_name);
+      fd.append('email',         data.email);
+      fd.append('phone',         data.phone || '');
+      fd.append('category',      data.category);
+      fd.append('subject',       data.subject);
+      fd.append('description',   data.description);
+      const res = await fetch('ticket-mail.php', { method: 'POST', body: fd });
+      const json = await res.json();
+      console.log('Email result:', json);
     } catch (err) {
-      console.error('EmailJS error:', err);
+      console.error('Email send error:', err);
     }
   }
 
