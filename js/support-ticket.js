@@ -213,7 +213,13 @@
 
     } catch (err) {
       console.error('Ticket submission error:', err);
-      showError('Error: ' + (err.message || JSON.stringify(err)));
+      const isNetworkErr = err instanceof TypeError && (
+        err.message.includes('NetworkError') || err.message.includes('Failed to fetch')
+      );
+      const msg = isNetworkErr
+        ? 'Unable to connect to our ticketing system. Please try again in a moment, or contact us directly at support@komtek.co.uk or 0333 305 6676.'
+        : 'Something went wrong submitting your ticket. Please try again or contact us at support@komtek.co.uk.';
+      showError(msg);
       setLoading(false);
     }
   });
