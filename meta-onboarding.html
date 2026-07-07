@@ -374,7 +374,6 @@
     <input type="hidden" id="hf_email"         name="Email">
     <input type="hidden" id="hf_website"       name="Website">
     <input type="hidden" id="hf_prev_meta"     name="Previously Run Meta Ads">
-    <input type="hidden" id="hf_platform"      name="Meta Platform">
     <input type="hidden" id="hf_goal"          name="Campaign Goal">
     <input type="hidden" id="hf_differentiator" name="Differentiator">
     <input type="hidden" id="hf_landing"       name="Sales / Landing Pages">
@@ -424,15 +423,6 @@
         <div class="radio-group">
           <label><input type="radio" name="prev_meta" value="Yes"> Yes</label>
           <label><input type="radio" name="prev_meta" value="No"> No</label>
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Meta Platform <span class="req">*</span></label>
-        <div class="radio-group" id="platformGroup">
-          <label><input type="radio" name="ad_platform" value="Facebook Ads" required> Facebook Ads</label>
-          <label><input type="radio" name="ad_platform" value="Instagram Ads"> Instagram Ads</label>
-          <label><input type="radio" name="ad_platform" value="Both Facebook &amp; Instagram"> Both Facebook &amp; Instagram</label>
         </div>
       </div>
 
@@ -674,12 +664,10 @@
       const ln = document.getElementById('last_name');
       const em = document.getElementById('email');
       const ws = document.getElementById('website');
-      const pl = document.querySelector('input[name="ad_platform"]:checked');
       if (!fn.value.trim()) { fn.focus(); return false; }
       if (!ln.value.trim()) { ln.focus(); return false; }
       if (!em.value.trim() || !em.value.includes('@')) { em.focus(); return false; }
       if (!ws.value.trim()) { ws.focus(); return false; }
-      if (!pl) { document.getElementById('platformGroup').scrollIntoView({ behavior: 'smooth' }); return false; }
     }
     if (n === 3) {
       const pl = document.getElementById('lp_platform');
@@ -706,9 +694,6 @@
 
     const prevMeta = document.querySelector('input[name="prev_meta"]:checked');
     document.getElementById('hf_prev_meta').value     = prevMeta ? prevMeta.value : 'Not answered';
-
-    const adPlatform = document.querySelector('input[name="ad_platform"]:checked');
-    document.getElementById('hf_platform').value      = adPlatform ? adPlatform.value : '';
 
     document.getElementById('hf_goal').value          = document.getElementById('goal').value;
     document.getElementById('hf_differentiator').value = document.getElementById('differentiator').value;
