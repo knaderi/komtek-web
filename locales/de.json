@@ -1,5 +1,8 @@
 {
   "nav": {
+    "dental": "Dental-IT-Lösungen",
+    "dental_packages": "Pakete für Zahnärzte",
+    "dental_voip": "VoIP für Zahnärzte",
     "ai": "KI-Rezeption",
     "ai_receptionist": "KI-Sprachrezeption",
     "ai_chatbots": "KI-Chatbots",

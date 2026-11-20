@@ -1,5 +1,8 @@
 {
   "nav": {
+    "dental": "Dental IT Solutions",
+    "dental_packages": "Packages for Dentists",
+    "dental_voip": "VoIP for Dentists",
     "ai": "AI Receptionist",
     "ai_receptionist": "AI Voice Receptionist",
     "ai_chatbots": "AI Chatbots",
