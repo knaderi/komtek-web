@@ -50,57 +50,57 @@
 
 [[redirects]]
   from = "/seo-service/"
-  to = "/digital-marketing.html"
+  to = "/seo.html"
   status = 301
 
 [[redirects]]
   from = "/seo/"
-  to = "/digital-marketing.html"
+  to = "/seo.html"
   status = 301
 
 [[redirects]]
   from = "/social-media/"
-  to = "/digital-marketing.html"
+  to = "/social-media-marketing.html"
   status = 301
 
 [[redirects]]
   from = "/google-ads/"
-  to = "/digital-marketing.html"
+  to = "/google-ads.html"
   status = 301
 
 [[redirects]]
   from = "/google-business-profile/"
-  to = "/digital-marketing.html"
+  to = "/google-business-profile.html"
   status = 301
 
 [[redirects]]
   from = "/spotify/"
-  to = "/digital-marketing.html"
+  to = "/spotify-advertising.html"
   status = 301
 
 [[redirects]]
   from = "/website-design/"
-  to = "/design-development.html"
+  to = "/website-design.html"
   status = 301
 
 [[redirects]]
   from = "/website-development/"
-  to = "/design-development.html"
+  to = "/website-development.html"
   status = 301
 
 [[redirects]]
   from = "/ecommerce-development/"
-  to = "/design-development.html"
+  to = "/ecommerce-development.html"
   status = 301
 
 [[redirects]]
   from = "/cms-website/"
-  to = "/design-development.html"
+  to = "/cms-website.html"
   status = 301
 
 [[redirects]]
   from = "/it-support/"
-  to = "/design-development.html"
+  to = "/it-support.html"
   status = 301
 
 [[redirects]]

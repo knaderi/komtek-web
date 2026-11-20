@@ -1,5 +1,10 @@
 {
   "nav": {
+    "ai": "AI Receptionist",
+    "ai_receptionist": "AI Voice Receptionist",
+    "ai_chatbots": "AI Chatbots",
+    "ai_crm": "CRM & Automation",
+    "ai_pricing": "AI Receptionist Pricing",
     "home": "Home",
     "voip": "VoIP Services",
     "marketing": "Digital Marketing",
