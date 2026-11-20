@@ -157,7 +157,7 @@ p:last-child{margin-bottom:0}
 
 /* Blog post feature image */
 .post-feat{background:#fff;padding:2.5rem 0}
-.post-feat img{width:100%;height:420px;object-fit:cover;display:block;border-radius:1rem}
+.post-feat img{width:100%;height:auto;aspect-ratio:851/315;object-fit:cover;display:block;border-radius:1rem}
 
 /* Page hero (inner pages) */
 .page-hero{background:linear-gradient(135deg,var(--primary-dark) 0%,#1c6dd0 100%);color:#fff;padding:3.5rem 0}
@@ -399,7 +399,7 @@ p:last-child{margin-bottom:0}
   .carousel-btn{width:32px;height:32px}
   .clients-carousel-wrap{padding:0 2rem}
   .post-feat{padding:1.25rem 0}
-  .post-feat img{height:220px;border-radius:.75rem}
+  .post-feat img{height:auto;border-radius:.75rem}
 }
 
 @media(max-width:480px){
