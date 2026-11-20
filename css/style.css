@@ -637,3 +637,9 @@ p:last-child{margin-bottom:0}
 .enquiry-success a{font-weight:700;text-decoration:underline}
 .form-group select{width:100%;padding:.75rem 1rem;border:2px solid var(--border);border-radius:var(--radius-sm);background:#fff;font-size:.92rem}
 @media(max-width:768px){.enquiry .contact-form-wrap{padding:1.5rem}}
+
+/* ============ Translation: hide Google's translator UI (our EN/ES/FR/DE switcher is used instead) ============ */
+iframe.skiptranslate,.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame,.goog-tooltip,.goog-te-spinner-pos{display:none!important}
+body{top:0!important;position:static}
+.goog-text-highlight{background:none!important;box-shadow:none!important}
+font[style*="vertical-align"]{vertical-align:baseline!important}
