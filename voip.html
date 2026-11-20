@@ -41,11 +41,11 @@
   <link rel="stylesheet" href="css/style.css?v=20261121">
   <script src="js/i18n.js" defer></script>
   <style>
-    .voip-choice{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:980px;margin:0 auto}
+    .voip-choice{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1150px;margin:0 auto}
     .voip-choice .card{display:flex;flex-direction:column}
     .voip-choice .card p{flex:1}
     .voip-choice .pkg-from{color:var(--primary);font-weight:700;margin:1rem 0}
-    @media(max-width:820px){.voip-choice{grid-template-columns:1fr}}
+    @media(max-width:1000px){.voip-choice{grid-template-columns:1fr;max-width:560px}}
   </style>
 
   <!-- Google Analytics 4 — replace G-PH5WBBZZQ0 with your Measurement ID -->
@@ -109,6 +109,7 @@
         <div class="dropdown" role="menu">
           <a href="home-voip.html" role="menuitem" data-i18n="nav.voip_home">Home VoIP Phone Service</a>
           <a href="business-voip.html" role="menuitem" data-i18n="nav.voip_biz">Business VoIP Phone Service</a>
+          <a href="call-centre-voip.html" role="menuitem" data-i18n="nav.voip_callcentre">Call Centre VoIP Solutions</a>
         </div>
       </li>
       <li class="nav-item">
@@ -165,6 +166,7 @@
     <div class="mobile-sub">
       <a href="home-voip.html">Home VoIP Phone Service</a>
       <a href="business-voip.html">Business VoIP Phone Service</a>
+      <a href="call-centre-voip.html">Call Centre VoIP Solutions</a>
     </div>
     <div class="mobile-group-title">Digital Marketing</div>
     <div class="mobile-sub">
@@ -240,6 +242,15 @@
         <div class="pkg-from">From &pound;9.99 per month (exc. VAT)</div>
         <a href="business-voip.html" class="btn btn-primary">Explore Business VoIP</a>
       </div>
+      <div class="card">
+        <div class="svc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 data-i18n="nav.voip_callcentre">Call Centre VoIP Solutions</h3>
+        <p>A cloud contact centre with ACD, IVR, skills-based routing, call recording, live wallboards, diallers and AI agents &mdash; for teams of any size.</p>
+        <div class="pkg-from">From &pound;9.99 per month (exc. VAT)</div>
+        <a href="call-centre-voip.html" class="btn btn-primary">Explore Call Centre VoIP</a>
+      </div>
     </div>
   </div>
 </section>
@@ -306,6 +317,7 @@
           <ul>
             <li><a href="home-voip.html" data-i18n="nav.voip_home">Home VoIP Phone Service</a></li>
             <li><a href="business-voip.html" data-i18n="nav.voip_biz">Business VoIP Phone Service</a></li>
+            <li><a href="call-centre-voip.html" data-i18n="nav.voip_callcentre">Call Centre VoIP Solutions</a></li>
           </ul>
         </div>
         <div class="footer-col">
