@@ -1,3 +1,19 @@
+# ── Force HTTPS and the www host ─────────────────────────────
+# http://komtek.co.uk, http://www.komtek.co.uk and https://komtek.co.uk
+# all redirect permanently (301) to https://www.komtek.co.uk
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Not on HTTPS (also honours a proxy's X-Forwarded-Proto header)
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteRule ^ https://www.komtek.co.uk%{REQUEST_URI} [L,R=301]
+
+  # On HTTPS but without www
+  RewriteCond %{HTTP_HOST} ^komtek\.co\.uk$ [NC]
+  RewriteRule ^ https://www.komtek.co.uk%{REQUEST_URI} [L,R=301]
+</IfModule>
+
 # ── Gzip compression ─────────────────────────────────────────
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript
@@ -53,4 +69,6 @@
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
+  # Tell browsers to always use HTTPS for this host (6 months)
+  Header always set Strict-Transport-Security "max-age=15552000"
 </IfModule>
