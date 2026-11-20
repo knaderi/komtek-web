@@ -1,21 +1,21 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VoIP Phone Systems UK — Home &amp; Business | KomTek</title>
-  <meta name="description" content="Cloud-hosted VoIP phone systems for homes and businesses in the UK. 99.999% uptime, 78-country coverage, mobile app, CRM integration, and voicemail-to-email. Get a free trial today.">
+  <meta name="description" content="Cloud-hosted VoIP phone systems for homes and businesses in the UK. Home VoIP from £8/month and Business VoIP from £9.99/month (exc. VAT). 99.999% uptime.">
   <meta name="keywords" content="VoIP phone system UK, business VoIP London, cloud PBX UK, hosted VoIP, home VoIP service, VoIP for small business">
   <link rel="canonical" href="https://www.komtek.co.uk/voip.html">
   <meta property="og:title" content="VoIP Phone Systems — Home &amp; Business | KomTek">
-  <meta property="og:description" content="Cloud-hosted VoIP for homes and businesses. 99.999% uptime, 78-country coverage, mobile app. UK-based since 2007.">
+  <meta property="og:description" content="Cloud-hosted VoIP phone systems for homes and businesses in the UK. Home VoIP from £8/month and Business VoIP from £9.99/month (exc. VAT). 99.999% uptime.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.komtek.co.uk/voip.html">
   <meta property="og:image" content="https://www.komtek.co.uk/images/logo.png">
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VoIP Phone Systems — Home &amp; Business | KomTek">
-  <meta name="twitter:description" content="Cloud-hosted VoIP for homes and businesses. 99.999% uptime, 78-country coverage, mobile app. UK-based since 2007.">
+  <meta name="twitter:description" content="Cloud-hosted VoIP phone systems for homes and businesses in the UK. Home VoIP from £8/month and Business VoIP from £9.99/month (exc. VAT). 99.999% uptime.">
   <meta name="twitter:image" content="https://www.komtek.co.uk/images/logo.png">
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
@@ -40,54 +40,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/i18n.js" defer></script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is VoIP and how does it work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "VoIP (Voice over Internet Protocol) lets you make phone calls over the internet instead of traditional phone lines. Calls are converted to digital data packets, sent over your broadband connection, and converted back to audio at the other end — delivering high-quality, cost-effective calls."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I keep my existing phone number when switching to VoIP?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. KomTek supports number porting, so you can transfer your existing geographic or 03-prefix number to our VoIP platform at no extra charge."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What equipment do I need for VoIP?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You need a broadband internet connection and either a VoIP-compatible desk phone (we support Grandstream, Cisco, Yealink, and Snom) or you can use our free Komtek Communicator softphone app on any smartphone, tablet, or PC."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the uptime guarantee on KomTek VoIP?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "KomTek guarantees 99.999% uptime backed by UK-based data centre redundancy and a multi-node network architecture."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does KomTek VoIP work internationally?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. KomTek's VoIP platform covers 78 countries and 3,723 area codes, making it ideal for businesses with international operations or remote teams."
-        }
-      }
-    ]
-  }
-  </script>
+  <style>
+    .voip-choice{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:980px;margin:0 auto}
+    .voip-choice .card{display:flex;flex-direction:column}
+    .voip-choice .card p{flex:1}
+    .voip-choice .pkg-from{color:var(--primary);font-weight:700;margin:1rem 0}
+    @media(max-width:820px){.voip-choice{grid-template-columns:1fr}}
+  </style>
 
   <!-- Google Analytics 4 — replace G-PH5WBBZZQ0 with your Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PH5WBBZZQ0"></script>
@@ -148,8 +107,8 @@
       <li class="nav-item">
         <a href="voip.html" class="nav-link active"><span data-i18n="nav.voip">VoIP Services</span> <svg class="nav-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6,9 12,15 18,9"/></svg></a>
         <div class="dropdown" role="menu">
-          <a href="voip.html#home-voip" role="menuitem" data-i18n="nav.voip_home">Home VoIP Phone Service</a>
-          <a href="voip.html#business-voip" role="menuitem" data-i18n="nav.voip_biz">Business VoIP Phone Service</a>
+          <a href="home-voip.html" role="menuitem" data-i18n="nav.voip_home">Home VoIP Phone Service</a>
+          <a href="business-voip.html" role="menuitem" data-i18n="nav.voip_biz">Business VoIP Phone Service</a>
         </div>
       </li>
       <li class="nav-item">
@@ -188,8 +147,8 @@
     <a href="/" class="mobile-nav-link">Home</a>
     <div class="mobile-group-title">VoIP Services</div>
     <div class="mobile-sub">
-      <a href="voip.html#home-voip">Home VoIP Phone Service</a>
-      <a href="voip.html#business-voip">Business VoIP Phone Service</a>
+      <a href="home-voip.html">Home VoIP Phone Service</a>
+      <a href="business-voip.html">Business VoIP Phone Service</a>
     </div>
     <div class="mobile-group-title">Digital Marketing</div>
     <div class="mobile-sub">
@@ -227,85 +186,35 @@
   </div>
 </section>
 
-<!-- HOME VoIP -->
-<section class="svc-detail" id="home-voip" aria-label="Home VoIP Phone Service">
+<!-- CHOOSE A SERVICE -->
+<section class="section" aria-label="Choose a VoIP service">
   <div class="container">
-    <div class="svc-detail-grid">
-      <div>
-        <div class="svc-big-icon" aria-hidden="true">
+    <div class="section-header">
+      <span class="tag">Our Services</span>
+      <h2>Choose Your VoIP Service</h2>
+    </div>
+    <div class="voip-choice">
+      <div class="card">
+        <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
         </div>
-        <h2 data-i18n="voip_page.home_h2">Home VoIP Phone Service</h2>
-        <p data-i18n="voip_page.home_p">Replace your traditional landline with a crystal-clear, cost-effective VoIP connection. KomTek's home VoIP service gives you all the features of a professional phone system — at a fraction of the cost.</p>
-        <ul class="feat-list" aria-label="Home VoIP features">
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Cloud PBX — manage calls from any device</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Voicemail-to-email — never miss a message</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Komtek Communicator softphone app (iOS &amp; Android)</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Compatible IP phones: Grandstream, Yealink, Cisco, Snom</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Local, national, and international number support</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>99.999% uptime with UK data centre redundancy</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Call history, call waiting, and time-frame settings</span></li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+        <h3 data-i18n="nav.voip_home">Home VoIP Phone Service</h3>
+        <p>Replace your traditional landline with crystal-clear internet calling. Keep your number, get voicemail-to-email and use your home line on your mobile.</p>
+        <div class="pkg-from">From &pound;8 per month (exc. VAT)</div>
+        <a href="home-voip.html" class="btn btn-primary">Explore Home VoIP</a>
       </div>
-      <div class="svc-visual">
-        <div class="svc-visual-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
-        </div>
-        <h3 data-i18n="voip_page.home_h3">Home VoIP — Key Benefits</h3>
-        <p data-i18n="voip_page.home_h3_p">Save on line rental while gaining professional phone features.</p>
-        <div class="svc-visual-bullets">
-          <div class="svc-visual-bullet" data-i18n="voip_page.home_b1">Significant savings vs traditional landline</div>
-          <div class="svc-visual-bullet" data-i18n="voip_page.home_b2">Free calls between KomTek users</div>
-          <div class="svc-visual-bullet" data-i18n="voip_page.home_b3">Works on your existing broadband</div>
-          <div class="svc-visual-bullet" data-i18n="voip_page.home_b4">Personal, Office &amp; Enterprise tiers</div>
-          <div class="svc-visual-bullet" data-i18n="voip_page.home_b5">Free trial available (up to 5 users)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BUSINESS VoIP -->
-<section class="svc-detail" id="business-voip" aria-label="Business VoIP Phone Service">
-  <div class="container">
-    <div class="svc-detail-grid flip">
-      <div>
-        <div class="svc-big-icon" aria-hidden="true">
+      <div class="card">
+        <div class="svc-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
         </div>
-        <h2 data-i18n="voip_page.biz_h2">Business VoIP Phone Service</h2>
-        <p data-i18n="voip_page.biz_p">A fully featured cloud-hosted phone system for small businesses, SMEs, and enterprises. Get the communications infrastructure of a large corporation — set up within days, not weeks.</p>
-        <ul class="feat-list" aria-label="Business VoIP features">
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Auto-attendant (virtual receptionist)</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Call queues, routing, and time-frame rules</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>CRM integration — caller preview, click-to-dial, activity logging</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Team collaboration tools</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>Multi-user PBX management &amp; admin portal</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>API access for business application integration</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>78 countries, 3,723 area codes — go global</span></li>
-          <li class="feat-item"><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20,6 9,17 4,12"/></svg></span><span>99.999% uptime — UK data centre redundancy</span></li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
-      </div>
-      <div class="svc-visual">
-        <div class="svc-visual-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <h3 data-i18n="voip_page.biz_h3">15 Years of VoIP Innovation</h3>
-        <p data-i18n="voip_page.biz_h3_p">Trusted by 531+ businesses across the UK and internationally.</p>
-        <div class="svc-visual-bullets">
-          <div class="svc-visual-bullet" data-i18n="voip_page.biz_b1">Professional setup within days</div>
-          <div class="svc-visual-bullet" data-i18n="voip_page.biz_b2">Scales from 1 to 1,000+ users</div>
-          <div class="svc-visual-bullet" data-i18n="voip_page.biz_b3">Includes mobile softphone app</div>
-          <div class="svc-visual-bullet" data-i18n="voip_page.biz_b4">Compatible with all major CRMs</div>
-          <div class="svc-visual-bullet" data-i18n="voip_page.biz_b5">Dedicated UK support team</div>
-        </div>
+        <h3 data-i18n="nav.voip_biz">Business VoIP Phone Service</h3>
+        <p>A fully featured cloud phone system with auto-attendant, call queues, CRM integration and 78-country coverage &mdash; set up within days.</p>
+        <div class="pkg-from">From &pound;9.99 per month (exc. VAT)</div>
+        <a href="business-voip.html" class="btn btn-primary">Explore Business VoIP</a>
       </div>
     </div>
   </div>
 </section>
-
 <!-- SHARED FEATURES -->
 <section class="section section-light" aria-label="VoIP platform features">
   <div class="container">
@@ -340,38 +249,6 @@
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section" aria-label="VoIP frequently asked questions">
-  <div class="container">
-    <div class="section-header">
-      <span class="tag">FAQ</span>
-      <h2 data-i18n="voip_page.faq_h2">VoIP Questions Answered</h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">What is VoIP and how does it work?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-        <div class="faq-a">VoIP (Voice over Internet Protocol) lets you make phone calls over the internet instead of a traditional phone line. Calls are compressed into digital packets, sent over your broadband, and converted back to audio at the other end — delivering high-quality, cost-effective calls from any device.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Can I keep my existing phone number?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-        <div class="faq-a">Yes. KomTek supports number porting, so you can transfer your existing geographic or 03-prefix number to our platform at no extra charge. The process typically takes 5–10 working days.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">What equipment do I need?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-        <div class="faq-a">You need a broadband internet connection and either a compatible desk phone (Grandstream, Cisco, Yealink, or Snom) or our free Komtek Communicator softphone app on any smartphone, tablet, or PC. We can supply and configure hardware if needed.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">What is the uptime guarantee?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-        <div class="faq-a">KomTek guarantees 99.999% uptime backed by UK-based data centre redundancy and multi-node network architecture — that's less than 6 minutes of potential downtime per year.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" aria-expanded="false">Is there a free trial available?<span class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-        <div class="faq-a">Yes. KomTek offers a free trial for up to 5 users with 2 desktop phones and 50 minutes of domestic calls per user per month. Trial hardware must be returned within 21 days if you choose not to continue. Contact us to get started.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CTA -->
 <section class="cta-banner" aria-label="VoIP call to action">
   <div class="container">
@@ -399,8 +276,8 @@
         <div class="footer-col">
           <h4 data-i18n="footer.voip">VoIP Services</h4>
           <ul>
-            <li><a href="voip.html#home-voip" data-i18n="nav.voip_home">Home VoIP Phone Service</a></li>
-            <li><a href="voip.html#business-voip" data-i18n="nav.voip_biz">Business VoIP Phone Service</a></li>
+            <li><a href="home-voip.html" data-i18n="nav.voip_home">Home VoIP Phone Service</a></li>
+            <li><a href="business-voip.html" data-i18n="nav.voip_biz">Business VoIP Phone Service</a></li>
           </ul>
         </div>
         <div class="footer-col">

@@ -35,17 +35,17 @@
 # Redirect old WordPress URLs to new pages
 [[redirects]]
   from = "/home-voip-phone-service/"
-  to = "/voip.html"
+  to = "/home-voip.html"
   status = 301
 
 [[redirects]]
   from = "/business-voip-phone-service/"
-  to = "/voip.html"
+  to = "/business-voip.html"
   status = 301
 
 [[redirects]]
   from = "/business-voip-packages/"
-  to = "/voip.html"
+  to = "/business-voip.html"
   status = 301
 
 [[redirects]]
