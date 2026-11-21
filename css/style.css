@@ -643,3 +643,8 @@ iframe.skiptranslate,.goog-te-banner-frame,#goog-gt-tt,.goog-te-balloon-frame,.g
 body{top:0!important;position:static}
 .goog-text-highlight{background:none!important;box-shadow:none!important}
 font[style*="vertical-align"]{vertical-align:baseline!important}
+
+/* Client logos are links; dark tile for logos with white text */
+a.clients-slide{text-decoration:none}
+a.clients-slide:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
+.clients-slide--dark{background:#0a3a6e;border-color:#0a3a6e}
