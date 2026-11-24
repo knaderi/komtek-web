@@ -648,3 +648,4 @@ font[style*="vertical-align"]{vertical-align:baseline!important}
 a.clients-slide{text-decoration:none}
 a.clients-slide:focus-visible{outline:3px solid var(--primary);outline-offset:3px}
 .clients-slide--dark{background:#0a3a6e;border-color:#0a3a6e}
+.clients-slide--black{background:#000;border-color:#000}
