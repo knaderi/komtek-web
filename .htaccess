@@ -1,6 +1,12 @@
 # ── Force HTTPS and the www host ─────────────────────────────
 # http://komtek.co.uk, http://www.komtek.co.uk and https://komtek.co.uk
 # all redirect permanently (301) to https://www.komtek.co.uk
+
+# MultiViews makes /about/ resolve to about.html + "/" and 404 before the
+# rewrite rules run, so it is switched off; extensionless URLs are handled
+# by the rule at the end of the rewrite block instead.
+Options -MultiViews
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
@@ -12,7 +18,57 @@
   # On HTTPS but without www
   RewriteCond %{HTTP_HOST} ^komtek\.co\.uk$ [NC]
   RewriteRule ^ https://www.komtek.co.uk%{REQUEST_URI} [L,R=301]
+
+  # ── Old WordPress URLs → new pages (301) ──────────────────
+  # Trailing slash optional. Add any further 404s from Search Console here.
+  RewriteRule ^contact/?$                      https://www.komtek.co.uk/contact.html [L,R=301]
+  RewriteRule ^contact-us/?$                   https://www.komtek.co.uk/contact.html [L,R=301]
+  RewriteRule ^about/?$                        https://www.komtek.co.uk/about.html [L,R=301]
+  RewriteRule ^about-us/?$                     https://www.komtek.co.uk/about.html [L,R=301]
+  RewriteRule ^home-voip-phone-service/?$      https://www.komtek.co.uk/home-voip.html [L,R=301]
+  RewriteRule ^business-voip-phone-service/?$  https://www.komtek.co.uk/business-voip.html [L,R=301]
+  RewriteRule ^business-voip-packages/?$       https://www.komtek.co.uk/business-voip.html [L,R=301]
+  RewriteRule ^seo-service/?$                  https://www.komtek.co.uk/seo.html [L,R=301]
+  RewriteRule ^seo/?$                          https://www.komtek.co.uk/seo.html [L,R=301]
+  RewriteRule ^social-media/?$                 https://www.komtek.co.uk/social-media-marketing.html [L,R=301]
+  RewriteRule ^google-ads/?$                   https://www.komtek.co.uk/google-ads.html [L,R=301]
+  RewriteRule ^google-business-profile/?$      https://www.komtek.co.uk/google-business-profile.html [L,R=301]
+  RewriteRule ^spotify/?$                      https://www.komtek.co.uk/spotify-advertising.html [L,R=301]
+  RewriteRule ^website-design/?$               https://www.komtek.co.uk/website-design.html [L,R=301]
+  RewriteRule ^website-development/?$          https://www.komtek.co.uk/website-development.html [L,R=301]
+  RewriteRule ^ecommerce-development/?$        https://www.komtek.co.uk/ecommerce-development.html [L,R=301]
+  RewriteRule ^cms-website/?$                  https://www.komtek.co.uk/cms-website.html [L,R=301]
+  RewriteRule ^it-support/?$                   https://www.komtek.co.uk/it-support.html [L,R=301]
+
+  # ── Search Console 404 export (2026-11-26) ────────────────
+  # Old pages with a real equivalent → 301 to that page (QSD drops ?query)
+  RewriteRule ^blog-grid/?$                    https://www.komtek.co.uk/blog/ [L,R=301,QSD]
+  RewriteRule ^category/.*$                    https://www.komtek.co.uk/blog/ [L,R=301,QSD]
+  RewriteRule ^20[0-9]{2}/[0-9]{2}/[0-9]{2}/.*$ https://www.komtek.co.uk/blog/ [L,R=301,QSD]
+  RewriteRule ^faq(-[0-9]+)?/?$                https://www.komtek.co.uk/contact.html [L,R=301,QSD]
+  RewriteRule ^all-team/.*$                    https://www.komtek.co.uk/about.html [L,R=301,QSD]
+  RewriteRule ^team-details/?$                 https://www.komtek.co.uk/about.html [L,R=301,QSD]
+  RewriteRule ^all-service/(it-consultancy|it-management|database-security|cyber-security)(-[0-9]+)?/?$ https://www.komtek.co.uk/it-support.html [L,R=301,QSD]
+  RewriteRule ^all-service/(app-development|ui-ux-design)(-[0-9]+)?/?$ https://www.komtek.co.uk/design-development.html [L,R=301,QSD]
+  RewriteRule ^all-service/digital-marketing(-[0-9]+)?/?$ https://www.komtek.co.uk/digital-marketing.html [L,R=301,QSD]
+  RewriteRule ^dental-directory-listing/?$     https://www.komtek.co.uk/dental-packages.html [L,R=301,QSD]
+  RewriteRule ^sms-packages/?$                 https://www.komtek.co.uk/business-voip.html [L,R=301,QSD]
+
+  # Old theme demo pages / junk links with no equivalent → 410 Gone
+  RewriteRule ^all-project/.*$                 - [G]
+  RewriteRule ^all-service/.*$                 - [G]
+  RewriteRule ^(service-details|customer-feedback|affiliates|il-en|ch)/?$ - [G]
+
+  # Any /page or /page/ that has a page.html → 301 to /page.html
+  # (IONOS's DOCUMENT_ROOT doesn't point at the site folder, so the file
+  #  check uses REQUEST_FILENAME with any trailing slash stripped)
+  RewriteCond %{REQUEST_FILENAME} ^(.+?)/?$
+  RewriteCond %1.html -f
+  RewriteRule ^([a-z0-9-]+)/?$                 https://www.komtek.co.uk/$1.html [L,R=301]
 </IfModule>
+
+# ── Custom 404 page ──────────────────────────────────────────
+ErrorDocument 404 /404.html
 
 # ── Gzip compression ─────────────────────────────────────────
 <IfModule mod_deflate.c>

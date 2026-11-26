@@ -8,3 +8,6 @@ package-lock.json
 # OS
 .DS_Store
 Thumbs.db
+
+# Private source docs and credentials (not for publishing)
+document/
